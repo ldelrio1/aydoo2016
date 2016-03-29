@@ -21,11 +21,7 @@ public class FactoresPrimos {
 	public void calcularPrimos(int numeroRecibido){
 		
 		this.numeroRecibido = numeroRecibido;
-		if (numeroRecibido < 2){
-    		System.out.println("Debe ingresar un número mayor que 1");
-    	}    	
-    	else{	
-    		
+		    		
         	for(int dividendo= 2;dividendo<(numeroRecibido+1);dividendo++){  
         		
         		int cantidadDeDivisores = 0;

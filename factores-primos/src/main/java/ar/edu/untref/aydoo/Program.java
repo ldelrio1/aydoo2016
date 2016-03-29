@@ -14,16 +14,16 @@ public class Program
     	FactoresPrimos calcular = new FactoresPrimos();
     	
         if(args.length > 2){
-        	System.out.println("Hay demasiados parámetros");
+        	System.out.println("Hay demasiados parametros");
         }
         else if(args.length == 0){
-        	System.out.println("Debe ingresar los parámetros correspondientes");
+        	System.out.println("Debe ingresar los parametros correspondientes");
         }
         try{
         	
         	if (numeroIngresado < 2){
-        		System.out.println("Debe ingresar un número mayor que 1");
-        	}{
+        		System.out.println("Debe ingresar un numero mayor que 1");
+        	}else{
             	numeroRecibido = numeroIngresado;
             	calcular.calcularPrimos(numeroRecibido);
             	calcular.calcularFactoresPrimos();
@@ -32,7 +32,7 @@ public class Program
 
         	}
         }catch(InputMismatchException e){
-        	System.out.println("Debe ingresar un número entero");
+        	System.out.println("Debe ingresar un numero entero");
         }
     }	
 }
