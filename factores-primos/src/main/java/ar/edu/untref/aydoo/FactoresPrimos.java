@@ -1,9 +1,9 @@
-import java.util.ArrayList;
 package ar.edu.untref.aydoo;
+import java.util.ArrayList;
 
 public class FactoresPrimos {
 
-	private int numeroRecibido;
+	
 	private ArrayList<Integer> numerosPrimos;
 	private ArrayList<Integer> factoresPrimos;
 	
@@ -20,8 +20,12 @@ public class FactoresPrimos {
 	 * */
 	public void calcularPrimos(int numeroRecibido){
 		
-		this.numeroRecibido = numeroRecibido;
-		    		
+		
+		if (numeroRecibido < 2){
+    		System.out.println("Debe ingresar un numero mayor que 1");
+    	}    	
+    	else{	
+    		
         	for(int dividendo= 2;dividendo<(numeroRecibido+1);dividendo++){  
         		
         		int cantidadDeDivisores = 0;
@@ -37,7 +41,7 @@ public class FactoresPrimos {
     	}
 	}
 
-	public void calcularFactoresPrimos() {
+	public void calcularFactoresPrimos(int numeroRecibido) {
 		
 		int recibidoAuxiliar;
 		recibidoAuxiliar = numeroRecibido;

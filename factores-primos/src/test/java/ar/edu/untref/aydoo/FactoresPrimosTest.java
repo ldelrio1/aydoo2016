@@ -1,27 +1,21 @@
 package ar.edu.untref.aydoo;
+import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.Assert;
-
 public class FactoresPrimosTest {
-
 	
 	@Test
 	public void testFactoresPrimosConNumero132() {
 		
 		int numeroRecibido = 132;
-		String factorizacionDe132 = "Factores primos 132: 2 3 3 11";
-		String factorizacion = "";
-		boolean factorizacionCorrecta;
+		String factorizacionDe132 = " 2 2 3 11 ";
+		
 		
 		FactoresPrimos factoresPrimos = new FactoresPrimos();
     	factoresPrimos.calcularPrimos(numeroRecibido);
-    	factoresPrimos.calcularFactoresPrimos();
-		factorizacion = factoresPrimos.imprimirFactoresPrimos();
-		
-		factorizacionCorrecta = factorizacion.equals(factorizacionDe132);
-		
-		Assert.assertTrue(factorizacionCorrecta);
+    	factoresPrimos.calcularFactoresPrimos(numeroRecibido);
+    	
+		Assert.assertEquals(factorizacionDe132, factoresPrimos.imprimirFactoresPrimos());
 		
 	}
 
@@ -29,18 +23,13 @@ public class FactoresPrimosTest {
 	public void testFactoresPrimosConNumero70() {
 		
 		int numeroRecibido = 70;
-		String factorizacionDe70 = "Factores primos 70: 2 5 7";
-		String factorizacion = "";
-		boolean factorizacionCorrecta;
+		String factorizacionDe70 = " 2 5 7 ";
 		
 		FactoresPrimos factoresPrimos = new FactoresPrimos();
     	factoresPrimos.calcularPrimos(numeroRecibido);
-    	factoresPrimos.calcularFactoresPrimos();
+    	factoresPrimos.calcularFactoresPrimos(numeroRecibido);
 		
-    	factorizacion = factoresPrimos.imprimirFactoresPrimos();
-		factorizacionCorrecta = factorizacion.equals(factorizacionDe70);
-		
-		Assert.assertTrue(factorizacionCorrecta);
+    	Assert.assertEquals(factorizacionDe70, factoresPrimos.imprimirFactoresPrimos());
 		
 	}
 	
@@ -48,19 +37,13 @@ public class FactoresPrimosTest {
 	public void testFactoresPrimosConNumero360() {
 		
 		int numeroRecibido = 360;
-		String factorizacionDe360 = "Factores primos 360: 2 2 2 3 3 5";
-		String factorizacion = "";
-		boolean factorizacionCorrecta;
+		String factorizacionDe360 = " 2 2 2 3 3 5 ";
 		
 		FactoresPrimos factoresPrimos = new FactoresPrimos();
     	factoresPrimos.calcularPrimos(numeroRecibido);
-    	factoresPrimos.calcularFactoresPrimos();
+    	factoresPrimos.calcularFactoresPrimos(numeroRecibido);
     	
-		factorizacion = factoresPrimos.imprimirFactoresPrimos();
-		factorizacionCorrecta = factorizacion.equals(factorizacionDe360);
-		
-		Assert.assertTrue(factorizacionCorrecta);
-		
+		Assert.assertEquals(factorizacionDe360, factoresPrimos.imprimirFactoresPrimos());	
 	}
 
 

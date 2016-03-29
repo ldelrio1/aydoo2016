@@ -23,11 +23,11 @@ public class Program
         	
         	if (numeroIngresado < 2){
         		System.out.println("Debe ingresar un numero mayor que 1");
-        	}else{
+        	}{
             	numeroRecibido = numeroIngresado;
             	calcular.calcularPrimos(numeroRecibido);
-            	calcular.calcularFactoresPrimos();
-            	System.out.println("Factores Primos " + numeroRecibido + ":" + 
+            	calcular.calcularFactoresPrimos(numeroRecibido);
+            	System.out.println("Factores primos " + numeroRecibido + ":" + 
             	calcular.imprimirFactoresPrimos());
 
         	}
