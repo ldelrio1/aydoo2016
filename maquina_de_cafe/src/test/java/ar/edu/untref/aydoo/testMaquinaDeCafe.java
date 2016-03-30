@@ -70,4 +70,15 @@ public class testMaquinaDeCafe {
 		Assert.assertEquals(0, vasoDeLucas.getCantidadDeCafe());
 		
 	}
+
+	@Test
+	public void testHacerCafeConLecheCon4AzucarNoSeGuarda(){
+		
+		Vaso vasoDeLucas = new Vaso(5);
+		Expendedora maquina = new Expendedora(vasoDeLucas);
+		vasoDeLucas = maquina.hacerCafeConLecheConNDeAzucar(4, 1, 2);
+		
+		Assert.assertEquals(0, vasoDeLucas.getCantidadDeAzucar());
+		
+	}
 }
