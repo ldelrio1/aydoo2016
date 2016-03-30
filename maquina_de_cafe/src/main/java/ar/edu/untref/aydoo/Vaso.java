@@ -27,17 +27,7 @@ public class Vaso {
 		
 	}
 	
-	public void agregarLeche(int cantidadDeLeche){
-		if((cantidadDeLeche <= this.capacidad) && 
-				(this.cantidadDeLeche + cantidadDeLeche <= this.capacidad)){
-			this.cantidadDeLeche += cantidadDeLeche;
-			this.capacidad = this.capacidad - cantidadDeLeche;
-		}
-		else{
-			System.out.println("La leche ya fue agregada");
-		}
-	}
-	
+		
 	public void agregarCafe(int cantidadDeCafe){
 		if((cantidadDeCafe <= this.capacidad) && 
 				(this.cantidadDeCafe + cantidadDeCafe <= this.capacidad)){
@@ -57,6 +47,21 @@ public class Vaso {
 			System.out.println("El te ya fue agregado");
 		}
 		
+	}
+
+	public void agregarLeche(int cantidadDeLeche){
+		if((cantidadDeLeche <= this.capacidad) && 
+				(this.cantidadDeLeche + cantidadDeLeche <= this.capacidad) &&
+				(this.cantidadDeCafe != 0 || this.sacosDeTe != 0)){
+			this.cantidadDeLeche += cantidadDeLeche;
+			this.capacidad = this.capacidad - cantidadDeLeche;
+		}
+		else if(this.cantidadDeCafe == 0 || this.sacosDeTe == 0){
+			System.out.println("La infusion no se pudo agregar");
+		}
+		else{
+			System.out.println("Se quiere agregar demasiada leche");
+		}
 	}
 	
 	public int getCantidadDeAzucar(){
