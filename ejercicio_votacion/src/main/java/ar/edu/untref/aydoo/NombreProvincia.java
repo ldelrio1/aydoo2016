@@ -1,0 +1,27 @@
+package ar.edu.untref.aydoo;
+
+public enum NombreProvincia {
+	JUJUY, 
+	SALTA, 
+	TUCUMAN, 
+	CHACO, 
+	FORMOSA, 
+	MISIONES, 
+	CORRIENTES,
+	SANTIAGO_DEL_ESTERO, 
+	CATAMARCA, 
+	LA_RIOJA, 
+	SAN_JUAN, 
+	SAN_LUIS, 
+	ENTRE_RIOS, 
+	SANTA_FE,
+	CORDOBA, 
+	MENDOZA, 
+	BUENOS_AIRES, 
+	LA_PAMPA, 
+	RIO_NEGRO, 
+	NEUQUEN, 
+	CHUBUT,
+	SANTA_CRUZ, 
+	TIERRA_DEL_FUEGO,
+}
