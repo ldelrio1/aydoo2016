@@ -2,15 +2,21 @@ package ar.edu.untref.aydoo;
 
 public class Compra {
 	
-	private String nombre;
+	private String nombreProducto;
 	private double valor;
 	private String mes;
 	
-	public Compra (String nombre, double valor, String mesCompra){
+	public Compra (String nombre, String mesCompra){
+		
 		this.mes = mesCompra;
-		this.valor = valor;
-		this.nombre = nombre;
+		this.nombreProducto = nombre;
 	}
+	
+	public void setValor(double valor){
+		
+		this.valor = valor;
+	}
+	
 	
 	public String getMesCompra(){
 	
@@ -19,7 +25,7 @@ public class Compra {
 		
 	public String getNombre(){
 		
-		return this.nombre;
+		return this.nombreProducto;
 	}
 	
 	public double getValor(){
