@@ -1,14 +1,13 @@
 package ar.edu.untref.aydoo;
 
-public class Compra {
+public class Producto {
 	
 	private String nombreProducto;
 	private double valor;
-	private String mes;
+	private String tipo;
 	
-	public Compra (String nombre, String mesCompra){
+	public Producto (String nombre){
 		
-		this.mes = mesCompra;
 		this.nombreProducto = nombre;
 	}
 	
@@ -17,10 +16,12 @@ public class Compra {
 		this.valor = valor;
 	}
 	
+	public void setTipo(String tipoProducto){
+		this.tipo = tipoProducto;
+	}
 	
-	public String getMesCompra(){
-	
-		return this.mes;
+	public String getTipo(){
+		return this.tipo;
 	}
 		
 	public String getNombre(){

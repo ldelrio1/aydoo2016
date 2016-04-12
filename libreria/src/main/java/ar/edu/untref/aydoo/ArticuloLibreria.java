@@ -1,13 +1,13 @@
 package ar.edu.untref.aydoo;
 
-public class ArticuloLibreria extends Compra {
+public class ArticuloLibreria extends Producto {
 	
 	
-	public ArticuloLibreria (String nombre, String mes, double monto, int cantidad){
+	public ArticuloLibreria (String nombre, double monto, int cantidad){
 		
-		super(nombre, mes);
+		super(nombre);
 		super.setValor((monto *cantidad) + calcularRecargo(monto, cantidad));
-		
+		super.setTipo("Libreria");
 	}
 	
 	public double calcularRecargo(double monto, int cantidad){
@@ -15,6 +15,5 @@ public class ArticuloLibreria extends Compra {
 		double recargo = (monto* cantidad) * 0.21;
 		return recargo;
 	}
-	
-	
+
 }

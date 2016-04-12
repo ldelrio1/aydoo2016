@@ -4,18 +4,36 @@ import org.junit.Test;
 
 public class IntegracionTest {
 
+	@Test
+	public void casoClienteNoEncontrado(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Clarín");
+		Periodico clarin = new Periodico ("Clarín", 13, false, true);
+		producto1 = clarin;
+		
+		juan.comprar(producto1, "Febrero");
+		
+		Cliente jose = new Cliente("José", "Av. Roca 531");
+				
+		Assert.assertEquals("Cliente no encontrado", 
+				elKiosko.calcularMontoACobrar("Febrero",jose));;
+	}
 	
 	@Test
 	public void casoVentaDeUnLibroEnEnero(){
 		
 		Kiosko elKiosko = new Kiosko();
-		Cliente juan = new Cliente("Juan");
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
-		Compra producto1 = new Compra("El Hobbit", "Enero");
-		Libro elHobbit = new Libro("El Hobbit", "Enero", 50);
+		Producto producto1 = new Producto("El Hobbit");
+		Libro elHobbit = new Libro("El Hobbit", 50);
 		producto1 = elHobbit;	
-		juan.comprar(producto1);
+		juan.comprar(producto1, "Enero");
 		
 		
 		Assert.assertEquals("Monto a cobrarle por enero: 50.0 = $50.0", 
@@ -26,20 +44,20 @@ public class IntegracionTest {
 	public void casoVentaDeUnLibroEnEneroyFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
-		Cliente juan = new Cliente("Juan");
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
-		Compra producto1 = new Compra("El Hobbit", "Enero");
-		Libro elHobbit = new Libro("El Hobbit", "Enero", 50);
+		Producto producto1 = new Producto("El Hobbit");
+		Libro elHobbit = new Libro("El Hobbit", 50);
 		producto1 = elHobbit;
 		
-		Compra producto2 = new Compra("La Metamorfosis", "Febrero");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", "Febrero", 70);
+		Producto producto2 = new Producto("La Metamorfosis");
+		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
 		producto1 = elHobbit;
 		producto2 = laMetamorfosis;
 		
-		juan.comprar(producto1);
-		juan.comprar(producto2);
+		juan.comprar(producto1, "Enero");
+		juan.comprar(producto2, "Febrero");
 		
 		
 		Assert.assertEquals("Monto a cobrarle por febrero: 70.0 = $70.0", 
@@ -50,20 +68,20 @@ public class IntegracionTest {
 	public void casoVentaDeDosLibrosEnFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
-		Cliente juan = new Cliente("Juan");
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
-		Compra producto1 = new Compra("El Hobbit", "Febrero");
-		Libro elHobbit = new Libro("El Hobbit", "Febrero", 50);
+		Producto producto1 = new Producto("El Hobbit");
+		Libro elHobbit = new Libro("El Hobbit", 50);
 		producto1 = elHobbit;
 		
-		Compra producto2 = new Compra("La Metamorfosis", "Febrero");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", "Febrero", 70);
+		Producto producto2 = new Producto("La Metamorfosis");
+		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
 		producto1 = elHobbit;
 		producto2 = laMetamorfosis;
 		
-		juan.comprar(producto1);
-		juan.comprar(producto2);
+		juan.comprar(producto1, "Febrero");
+		juan.comprar(producto2, "Febrero");
 		
 		Assert.assertEquals("Monto a cobrarle por febrero: 50.0 + 70.0 = $120.0", 
 				elKiosko.calcularMontoACobrar("Febrero",juan));;
@@ -73,27 +91,111 @@ public class IntegracionTest {
 	public void casoVentaDeDosLibrosYDosLapicerasEnFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
-		Cliente juan = new Cliente("Juan");
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
-		Compra producto1 = new Compra("El Hobbit", "Febrero");
-		Libro elHobbit = new Libro("El Hobbit", "Febrero", 50);
+		Producto producto1 = new Producto("El Hobbit");
+		Libro elHobbit = new Libro("El Hobbit", 50);
 		producto1 = elHobbit;
 		
-		Compra producto2 = new Compra("La Metamorfosis","Febrero");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", "Febrero", 70);
+		Producto producto2 = new Producto("La Metamorfosis");
+		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
 		producto1 = elHobbit;
 		producto2 = laMetamorfosis;
 		
-		Compra producto3 = new Compra("LapiceraBic", "Febrero");
-		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic","Febrero", 5, 2);
+		Producto producto3 = new Producto("LapiceraBic");
+		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic", 5, 2);
 		producto3 = lapicera;
 		
-		juan.comprar(producto1);
-		juan.comprar(producto2);
-		juan.comprar(producto3);
+		juan.comprar(producto1, "Febrero");
+		juan.comprar(producto2, "Febrero");
+		juan.comprar(producto3, "Febrero");
 		
 		Assert.assertEquals("Monto a cobrarle por febrero: 50.0 + 70.0 + 12.1 = $132.1", 
 				elKiosko.calcularMontoACobrar("Febrero",juan));;
 	}
+	
+	@Test
+	public void casoVentaAMasDeUnClienteEnFebrero(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		Cliente pedro = new Cliente("Pedro", "Av. Libertador 4631");
+		elKiosko.agregarCliente(juan);
+		elKiosko.agregarCliente(pedro);
+		
+		Producto producto1 = new Producto("El Hobbit");
+		Libro elHobbit = new Libro("El Hobbit", 50);
+		producto1 = elHobbit;
+		
+		Producto producto2 = new Producto("La Metamorfosis");
+		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
+		producto2 = laMetamorfosis;
+		
+		Producto producto3 = new Producto("LapiceraBic");
+		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic", 5, 2);
+		producto3 = lapicera;
+		
+		juan.comprar(producto1, "Enero");
+		juan.comprar(producto2, "Febrero");
+		juan.comprar(producto3, "Febrero");
+		
+		pedro.comprar(producto3, "Febrero");
+		
+		Assert.assertEquals("Monto a cobrarle por febrero: 12.1 = $12.1", 
+				elKiosko.calcularMontoACobrar("Febrero",pedro));;
+	}
+	
+	@Test
+	public void casoVentaSoloPeriodicoFebrero(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Clarín");
+		Periodico clarin = new Periodico ("Clarín", 13, true, false);
+		producto1 = clarin;
+		
+		juan.comprar(producto1, "Febrero");
+		
+		Assert.assertEquals("Monto a cobrarle por febrero: 13.0 = $13.0", 
+				elKiosko.calcularMontoACobrar("Febrero",juan));;
+	}
+	
+	@Test
+	public void casoSuscripcionPeriodicoFebrero(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Clarín");
+		Periodico clarin = new Periodico ("Clarín", 13, false, true);
+		producto1 = clarin;
+		
+		juan.comprar(producto1, "Febrero");
+		
+		Assert.assertEquals("Monto a cobrarle por febrero: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Febrero",juan));;
+	}
+	
+	@Test
+	public void casoVentaPeriodicoFebreroVerPrecioJunio(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Clarín");
+		Periodico clarin = new Periodico ("Clarín", 13, false, true);
+		producto1 = clarin;
+		
+		juan.comprar(producto1, "Febrero");
+		
+		Assert.assertEquals("Monto a cobrarle por junio: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Junio",juan));;
+	}
+	
+	
 }

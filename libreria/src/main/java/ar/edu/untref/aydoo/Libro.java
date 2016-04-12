@@ -1,12 +1,11 @@
 package ar.edu.untref.aydoo;
 
-public class Libro extends Compra {
+public class Libro extends Producto {
 	
-	public Libro(String nombreLibro, String mes, double monto) {
-		super(nombreLibro, mes);
+	public Libro(String nombreLibro, double monto) {
+		super(nombreLibro);
 		super.setValor(monto);
+		super.setTipo("Libro");
 	}
-	
-	
 	
 }
