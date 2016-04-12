@@ -6,7 +6,6 @@ public class Periodico extends Producto {
 			boolean ejemplarSuelto, boolean suscripcion) {
 		
 		super(nombrePeriodico);
-		super.setTipo("Periodico");
 		
 		if (ejemplarSuelto == true || suscripcion == true){
 			
@@ -17,11 +16,13 @@ public class Periodico extends Producto {
 			else if(suscripcion == true){
 				double descuento = monto*0.2;
 				super.setValor((monto - descuento)*30);
+				super.setTipo("Periodico");
+
 		
 			}
 		}
 		
 	}
-
-
+	
+	
 }

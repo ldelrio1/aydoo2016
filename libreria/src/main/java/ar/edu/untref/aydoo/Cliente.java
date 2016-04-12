@@ -39,12 +39,12 @@ public class Cliente {
 	}
 
 	public void comprar(Producto unProducto, String mes){
-		if (unProducto.getTipo() == "Periodico"){
+		
+		if (unProducto.getTipo() == "Periodico" || unProducto.getTipo() == "Revista"){
 			for (int i= 0; i < productosComprados.size(); i ++){
 				productosComprados.get(i).add(unProducto);
 			}
-		}
-		else{
+		}else{
 			productosComprados.get(getMes(mes)).add(unProducto);
 		}
 	}
