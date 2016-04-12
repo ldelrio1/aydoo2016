@@ -30,14 +30,6 @@ public class Cliente {
 		this.direccion = direccion;
 	}
 	
-	public String getNombreCliente(){
-		return this.nombreCliente;
-	}
-	
-	public String getDireccionCliente(){
-		return this.direccion;
-	}
-
 	public void comprar(Producto unProducto, String mes){
 		
 		if (unProducto.getTipo() == "Periodico" || unProducto.getTipo() == "Revista"){
@@ -60,57 +52,54 @@ public class Cliente {
 		String mesEnMinusculas = mes.toLowerCase();
 		switch(mesEnMinusculas){
 			case "enero":
-				nroMes = 1;
+				nroMes = 0;
 				break;
 			
 			case "febrero":
-				nroMes = 2;
+				nroMes = 1;
 				break;
 			
 			case "marzo":
-				nroMes = 3;
+				nroMes = 2;
 				break;
 				
 			case "abril":
-				nroMes = 4;
+				nroMes = 3;
 				break;
 			
 			case "mayo":
-				nroMes = 5;
+				nroMes = 4;
 				break;
 			
 			case "junio":
-				nroMes = 6;
+				nroMes = 5;
 				break;
 			
 			case "julio":
-				nroMes = 7;
+				nroMes = 6;
 				break;
 			
 			case "agosto":
-				nroMes = 8;
+				nroMes = 7;
 				break;
 			
 			case "septiembre":
-				nroMes = 9;
+				nroMes = 8;
 				break;
 			
 			case "octubre":
-				nroMes = 10;
+				nroMes = 9;
 				break;
 			
 			case "noviembre":
-				nroMes = 11;
+				nroMes = 10;
 				break;
 			
 			case "diciembre":
-				nroMes = 12;
+				nroMes = 11;
 				break;
 					
 		}
 		return nroMes;
 	}
-	
-	
-
 }

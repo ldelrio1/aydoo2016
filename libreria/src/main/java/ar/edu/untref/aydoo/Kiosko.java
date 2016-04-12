@@ -75,5 +75,4 @@ public class Kiosko {
 		
 		return mensaje;
 	}
-	
 }

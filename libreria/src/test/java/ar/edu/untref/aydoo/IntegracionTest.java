@@ -181,7 +181,7 @@ public class IntegracionTest {
 	}
 	
 	@Test
-	public void casoVentaPeriodicoFebreroVerPrecioJunio(){
+	public void casoSuscripcionPeriodicoFebreroVerPrecioJunio(){
 		
 		Kiosko elKiosko = new Kiosko();
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
@@ -195,6 +195,32 @@ public class IntegracionTest {
 		
 		Assert.assertEquals("Monto a cobrarle por junio: 312.0 = $312.0", 
 				elKiosko.calcularMontoACobrar("Junio",juan));
+	}
+	
+	@Test
+	public void casoSuscripcionPeriodicoFebreroVerPrecioEnOtrosMes(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Clarín");
+		Periodico clarin = new Periodico ("Clarín", 13, false, true);
+		producto1 = clarin;
+		
+		juan.comprar(producto1, "Febrero");
+		
+		Assert.assertEquals("Monto a cobrarle por marzo: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Marzo",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por abril: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Abril",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por mayo: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Mayo",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por julio: 312.0 = $312.0", 
+				elKiosko.calcularMontoACobrar("Julio",juan));
 	}
 	
 	@Test
@@ -217,6 +243,50 @@ public class IntegracionTest {
 		
 		Assert.assertEquals("Monto a cobrarle por febrero: 312.0 + 70.0 = $382.0", 
 				elKiosko.calcularMontoACobrar("Febrero",juan));
+	}
+	
+	@Test
+	public void casoSuscripcionRevistaMarzoVerPrecioEnOtrosMes(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Barcelona");
+		Revista barcelona = new Revista("Barcelona", 20, 2);
+		producto1 = barcelona;
+		
+		juan.comprar(producto1, "Marzo");
+		
+		Assert.assertEquals("Monto a cobrarle por septiembre: 32.0 = $32.0", 
+				elKiosko.calcularMontoACobrar("Septiembre",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por octubre: 32.0 = $32.0", 
+				elKiosko.calcularMontoACobrar("Octubre",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por noviembre: 32.0 = $32.0", 
+				elKiosko.calcularMontoACobrar("Noviembre",juan));
+		
+		Assert.assertEquals("Monto a cobrarle por diciembre: 32.0 = $32.0", 
+				elKiosko.calcularMontoACobrar("Diciembre",juan));
+	}
+	
+	@Test
+	public void casoCompraUnaRevistaMarzo(){
+		
+		Kiosko elKiosko = new Kiosko();
+		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
+		elKiosko.agregarCliente(juan);
+		
+		Producto producto1 = new Producto("Barcelona");
+		Revista barcelona = new Revista("Barcelona", 20, 0);
+		producto1 = barcelona;
+		
+		juan.comprar(producto1, "Marzo");
+		
+		Assert.assertEquals("Monto a cobrarle por marzo: 20.0 = $20.0", 
+				elKiosko.calcularMontoACobrar("Marzo",juan));
+		
 	}
 	
 	@Test 
@@ -267,5 +337,4 @@ public class IntegracionTest {
 		Assert.assertEquals("Monto a cobrarle por enero: 32.0 + 12.0 = $44.0", 
 				elKiosko.calcularMontoACobrar("Enero",maria));
 	}
-	
 }

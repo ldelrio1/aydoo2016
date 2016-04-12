@@ -2,7 +2,6 @@ package ar.edu.untref.aydoo;
 
 public class ArticuloLibreria extends Producto {
 	
-	
 	public ArticuloLibreria (String nombre, double monto, int cantidad){
 		
 		super(nombre);
@@ -15,5 +14,4 @@ public class ArticuloLibreria extends Producto {
 		double recargo = (monto* cantidad) * 0.21;
 		return recargo;
 	}
-
 }

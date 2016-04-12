@@ -23,15 +23,9 @@ public class Producto {
 	public String getTipo(){
 		return this.tipo;
 	}
-		
-	public String getNombre(){
-		
-		return this.nombreProducto;
-	}
 	
 	public double getValor(){
 		
 		return this.valor;
 	}
-
 }
