@@ -2,18 +2,20 @@ package ar.edu.untref.aydoo;
 
 public class Producto {
 	
-	private String nombreProducto;
 	private double valor;
 	private String tipo;
 	
 	public Producto (String nombre){
 		
-		this.nombreProducto = nombre;
+		setNombreProducto(nombre);
 	}
 	
 	public void setValor(double valor){
 		
 		this.valor = valor;
+	}
+	
+	public void setNombreProducto(String nombre){
 	}
 	
 	public void setTipo(String tipoProducto){
