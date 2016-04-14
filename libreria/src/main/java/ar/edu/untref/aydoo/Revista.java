@@ -2,6 +2,7 @@ package ar.edu.untref.aydoo;
 
 public class Revista extends Producto {
 	
+	//frecuenciaMensual indica cuantas veces al mes sale la revista
 	public Revista(String nombreRevista, double monto, 
 				 int frecuenciaMensual) {
 		super(nombreRevista);

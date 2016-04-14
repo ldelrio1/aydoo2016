@@ -8,12 +8,12 @@ public class IntegracionTest {
 	public void casoClienteNoEncontrado(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, false, true);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, false, true);
 		
 		juan.comprar(producto1, "Febrero");
 		
@@ -27,15 +27,15 @@ public class IntegracionTest {
 	public void casoVentaDeUnLibroEnEnero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;	
+		producto1 = new Libro("El Hobbit", 50);
+		
 		juan.comprar(producto1, "Enero");
-		
-		
+				
 		Assert.assertEquals("Monto a cobrarle por enero: 50.0 = $50.0", 
 				elKiosko.calcularMontoACobrar("Enero",juan));
 	}
@@ -44,21 +44,18 @@ public class IntegracionTest {
 	public void casoVentaDeUnLibroEnEneroyFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;
+		producto1 = new Libro("El Hobbit", 50);
 		
 		Producto producto2 = new Producto("La Metamorfosis");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
-		producto1 = elHobbit;
-		producto2 = laMetamorfosis;
+		producto2 = new Libro("La Metamorfosis", 70);
 		
 		juan.comprar(producto1, "Enero");
 		juan.comprar(producto2, "Febrero");
-		
 		
 		Assert.assertEquals("Monto a cobrarle por febrero: 70.0 = $70.0", 
 				elKiosko.calcularMontoACobrar("Febrero",juan));
@@ -68,17 +65,15 @@ public class IntegracionTest {
 	public void casoVentaDeDosLibrosEnFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;
+		producto1 = new Libro("El Hobbit", 50);
 		
 		Producto producto2 = new Producto("La Metamorfosis");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
-		producto1 = elHobbit;
-		producto2 = laMetamorfosis;
+		producto2 = new Libro("La Metamorfosis", 70);
 		
 		juan.comprar(producto1, "Febrero");
 		juan.comprar(producto2, "Febrero");
@@ -91,21 +86,18 @@ public class IntegracionTest {
 	public void casoVentaDeDosLibrosYDosLapicerasEnFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;
+		producto1 = new Libro("El Hobbit", 50);
 		
 		Producto producto2 = new Producto("La Metamorfosis");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
-		producto1 = elHobbit;
-		producto2 = laMetamorfosis;
+		producto2 = new Libro("La Metamorfosis", 70);
 		
 		Producto producto3 = new Producto("LapiceraBic");
-		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic", 5, 2);
-		producto3 = lapicera;
+		producto3 = new ArticuloLibreria("LapiceraBic", 5, 2);
 		
 		juan.comprar(producto1, "Febrero");
 		juan.comprar(producto2, "Febrero");
@@ -119,22 +111,21 @@ public class IntegracionTest {
 	public void casoVentaAMasDeUnClienteEnFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		Cliente pedro = new Cliente("Pedro", "Av. Libertador 4631");
+		
 		elKiosko.agregarCliente(juan);
 		elKiosko.agregarCliente(pedro);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;
+		producto1 = new Libro("El Hobbit", 50);
 		
 		Producto producto2 = new Producto("La Metamorfosis");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
-		producto2 = laMetamorfosis;
+		producto2 = new Libro("La Metamorfosis", 70);
 		
 		Producto producto3 = new Producto("LapiceraBic");
-		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic", 5, 2);
-		producto3 = lapicera;
+		producto3 = new ArticuloLibreria("LapiceraBic", 5, 2);
 		
 		juan.comprar(producto1, "Enero");
 		juan.comprar(producto2, "Febrero");
@@ -150,12 +141,12 @@ public class IntegracionTest {
 	public void casoVentaSoloPeriodicoFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, true, false);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, true, false);
 		
 		juan.comprar(producto1, "Febrero");
 		
@@ -167,12 +158,12 @@ public class IntegracionTest {
 	public void casoSuscripcionPeriodicoFebrero(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, false, true);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, false, true);
 		
 		juan.comprar(producto1, "Febrero");
 		
@@ -184,12 +175,12 @@ public class IntegracionTest {
 	public void casoSuscripcionPeriodicoFebreroVerPrecioJunio(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, false, true);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, false, true);
 		
 		juan.comprar(producto1, "Febrero");
 		
@@ -201,12 +192,12 @@ public class IntegracionTest {
 	public void casoSuscripcionPeriodicoFebreroVerPrecioEnOtrosMes(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, false, true);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, false, true);
 		
 		juan.comprar(producto1, "Febrero");
 		
@@ -227,16 +218,15 @@ public class IntegracionTest {
 	public void casoSuscripcionPeriodicoFebreroMasLibro(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Clarín");
-		Periodico clarin = new Periodico ("Clarín", 13, false, true);
-		producto1 = clarin;
+		producto1 = new Periodico ("Clarín", 13, false, true);
 		
 		Producto producto2 = new Producto("La Metamorfosis");
-		Libro laMetamorfosis = new Libro("La Metamorfosis", 70);
-		producto2 = laMetamorfosis;
+		producto2 = new Libro("La Metamorfosis", 70);
 		
 		juan.comprar(producto1, "Febrero");
 		juan.comprar(producto2, "Febrero");
@@ -249,12 +239,12 @@ public class IntegracionTest {
 	public void casoSuscripcionRevistaMarzoVerPrecioEnOtrosMes(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Barcelona");
-		Revista barcelona = new Revista("Barcelona", 20, 2);
-		producto1 = barcelona;
+		producto1 = new Revista("Barcelona", 20, 2);
 		
 		juan.comprar(producto1, "Marzo");
 		
@@ -275,12 +265,12 @@ public class IntegracionTest {
 	public void casoCompraUnaRevistaMarzo(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("Barcelona");
-		Revista barcelona = new Revista("Barcelona", 20, 0);
-		producto1 = barcelona;
+		producto1 = new Revista("Barcelona", 20, 0);
 		
 		juan.comprar(producto1, "Marzo");
 		
@@ -293,20 +283,18 @@ public class IntegracionTest {
 	public void casoUno(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente juan = new Cliente("Juan", "Av. San Martin 5213");
 		elKiosko.agregarCliente(juan);
 		
 		Producto producto1 = new Producto("El Hobbit");
-		Libro elHobbit = new Libro("El Hobbit", 50);
-		producto1 = elHobbit;
+		producto1 = new Libro("El Hobbit", 50);
 		
 		Producto producto2 = new Producto("LapiceraBic");
-		ArticuloLibreria lapicera = new ArticuloLibreria("LapiceraBic", 5, 2);
-		producto2 = lapicera;
+		producto2 = new ArticuloLibreria("LapiceraBic", 5, 2);
 		
 		Producto producto3 = new Producto("El Gráfico");
-		Periodico elGrafico = new Periodico ("El Gráfico", 30, true, false);
-		producto3 = elGrafico;
+		producto3 = new Periodico ("El Gráfico", 30, true, false);
 				
 		juan.comprar(producto1, "Agosto");
 		juan.comprar(producto2, "Agosto");
@@ -320,16 +308,15 @@ public class IntegracionTest {
 	public void casoDos(){
 		
 		Kiosko elKiosko = new Kiosko();
+		
 		Cliente maria = new Cliente("María", "Av. Alvarez Thomas 213");
 		elKiosko.agregarCliente(maria);
 		
 		Producto producto1 = new Producto("Barcelona");
-		Revista barcelona = new Revista("Barcelona", 20, 2);
-		producto1 = barcelona;
+		producto1 = new Revista("Barcelona", 20, 2);
 		
 		Producto producto2 = new Producto("Página 12");
-		Periodico pagina12 = new Periodico ("Página 12", 12, true, false);
-		producto2 = pagina12;
+		producto2 = new Periodico ("Página 12", 12, true, false);
 				
 		maria.comprar(producto1, "Enero");
 		maria.comprar(producto2, "Enero");
