@@ -7,7 +7,6 @@ public class Compra {
 	private Mes mes;
 	private double cantidad;
 	private List<Producto> listaDeProductos = new LinkedList<Producto>();
-	
 
 	public Compra(Mes mes) {
 		this.mes = mes;

@@ -7,7 +7,7 @@ public class ClienteTest {
 
 	@Test
 	public void crearCliente() {
-		Cliente cliente = new Cliente("Gonza");
+		Cliente cliente = new Cliente("Gonza" , "Dorrego 1320");
 
 		String nombre = cliente.getNombre();
 
@@ -16,7 +16,7 @@ public class ClienteTest {
 	
 	@Test
 	public void crearClienteConDireccion() {
-		Cliente cliente = new Cliente("Gonza");
+		Cliente cliente = new Cliente("Gonza", "Dorrego 1320");
 
 		cliente.setDireccion("calle falsa 123");
 		String direccion = cliente.getDireccion();
@@ -26,7 +26,7 @@ public class ClienteTest {
 	
 	@Test
 	public void clienteConCompraYQueExista() {
-		Cliente cliente = new Cliente("Gonza");
+		Cliente cliente = new Cliente("Gonza", "Dorrego 1320");
 		Producto libro = new Libro("El Hobbit");
 		Compra compra = new Compra(Mes.ENERO);
 		
@@ -38,7 +38,7 @@ public class ClienteTest {
 	
 	@Test
 	public void clienteConCompra() {
-		Cliente cliente = new Cliente("Gonza");
+		Cliente cliente = new Cliente("Gonza", "Dorrego 1320");
 		Producto libro = new Libro("El Hobbit");
 		Compra compra = new Compra(Mes.ENERO);
 		

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Suscripcion extends Producto {
 	private List<Producto> productos;
-
+	
 	public Suscripcion() {
 		productos = new LinkedList<Producto>();
 	}
@@ -26,7 +26,6 @@ public class Suscripcion extends Producto {
 				frecuencia = ((Periodico) productoActual).getFrecuencia();
 			}
 			
-
 			switch (frecuencia) {
 			case DIARIA:
 				precio = precio + productoActual.getPrecio() * 30;
@@ -51,4 +50,5 @@ public class Suscripcion extends Producto {
 	public List<Producto> getListaDeProductos() {
 		return this.productos;
 	}
+	
 }
