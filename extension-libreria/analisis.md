@@ -7,7 +7,7 @@ A modificar, sin cambiar drásticamente el código base:
 	- Agregar dirección en Constructor de Cliente
 	- Agregar clase Alquiler (extiende de Producto)
 	- Agregar clase TipoAlquiler (enum)
-	- Agregar Test en LibreriaTest
+	- Agregar Test en LibreriaTest y AlquilerTest
 	- Se agregó métodos completarSuscripcion y completarAlquiler 
 		que van a ser llamados en agregarCompra, todo dentro de la clase Cliente.
 
