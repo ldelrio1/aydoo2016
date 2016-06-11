@@ -5,7 +5,7 @@ package ar.edu.untref.aydoo;
  */
 public class Program {
 
-    public static final void main(String args[]) throws ExcepcionIngresoInvalido {
+    public static final void main(String args[]) {
 
 
         CalculadorDeFactoresPrimos calculador = new CalculadorDeFactoresPrimos();
