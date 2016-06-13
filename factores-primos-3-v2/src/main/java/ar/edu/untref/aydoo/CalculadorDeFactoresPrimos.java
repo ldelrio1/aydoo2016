@@ -49,9 +49,9 @@ public class CalculadorDeFactoresPrimos {
 
         String factoresPrimosOrdenados = "";
 
-        if(orden.equals("asc")){
+        if(orden == "asc"){
             factoresPrimosOrdenados = getResultadoDeFactoresPrimos();
-        }else if(orden.equals("des")){
+        }else if(orden == "des"){
             factoresPrimosOrdenados = getFactoresPrimosDescendentes();
         }
         return factoresPrimosOrdenados;
