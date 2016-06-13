@@ -76,4 +76,25 @@ public class CalculadorDeFactoresPrimosTest {
         }
 	}
 
+    @Test
+    public void factoresPrimosEsperaOrdenAscendente(){
+        String numeroRecibido = "18";
+        String factorizacionDe18 = " 2 3 3";
+
+        calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+
+        Assert.assertEquals(factorizacionDe18, calculadorDeFactoresPrimos.getFactoresPrimos("asc"));
+    }
+
+    @Test
+    public void factoresPrimosEsperaOrdenDescendente(){
+        String numeroRecibido = "18";
+        String factorizacionDe18 = " 3 3 2";
+
+        calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+
+        Assert.assertEquals(factorizacionDe18, calculadorDeFactoresPrimos.getFactoresPrimos("des"));
+    }
+
+
 }
