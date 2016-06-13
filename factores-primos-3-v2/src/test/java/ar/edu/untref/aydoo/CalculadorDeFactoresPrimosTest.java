@@ -9,77 +9,71 @@ public class CalculadorDeFactoresPrimosTest {
 	CalculadorDeFactoresPrimos calculadorDeFactoresPrimos = new CalculadorDeFactoresPrimos();
 
 	@Test
-	public void factoresPrimosConNumero132() {
+	public void factoresPrimosConNumero132() throws ExcepcionIngresoInvalido {
 		
 	    String numeroRecibido = "132";
-        LinkedList<Integer> factorizacionDe132 = new LinkedList<>();
-        factorizacionDe132.add(2);
-        factorizacionDe132.add(2);
-        factorizacionDe132.add(3);
-        factorizacionDe132.add(11);
 
-        Assert.assertEquals(factorizacionDe132,
-                calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        String factorizacionDe132 = " 2 2 3 11";
+        calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+
+        Assert.assertEquals(factorizacionDe132,calculadorDeFactoresPrimos.getResultadoDeFactoresPrimos());
     }
 	
 	@Test
-	public void factoresPrimosConNumero360() {
+	public void factoresPrimosConNumero360() throws ExcepcionIngresoInvalido {
 
         String numeroRecibido = "360";
-        LinkedList<Integer> factorizacionDe360 = new LinkedList<>();
-        factorizacionDe360.add(2);
-        factorizacionDe360.add(2);
-        factorizacionDe360.add(2);
-        factorizacionDe360.add(3);
-        factorizacionDe360.add(3);
-        factorizacionDe360.add(5);
+        String factorizacionDe360 = " 2 2 2 3 3 5";
+        calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 
-        Assert.assertEquals(factorizacionDe360,
-                calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        Assert.assertEquals(factorizacionDe360, calculadorDeFactoresPrimos.getResultadoDeFactoresPrimos());
 	}
 	
 	@Test
-	public void factoresPrimosConNumero18() {
+	public void factoresPrimosConNumero18() throws ExcepcionIngresoInvalido {
 
         String numeroRecibido = "18";
-        LinkedList<Integer> factorizacionDe18 = new LinkedList<>();
-        factorizacionDe18.add(2);
-        factorizacionDe18.add(3);
-        factorizacionDe18.add(3);
+        String factorizacionDe18 = " 2 3 3";
 
-        Assert.assertEquals(factorizacionDe18,
-                calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+
+        Assert.assertEquals(factorizacionDe18, calculadorDeFactoresPrimos.getResultadoDeFactoresPrimos());
  	}
 	
-	@Test(expected = ExcepcionNumeroInvalido.class)
-	public void factoresPrimosConNumero1EsperaExcepcion() {
+	@Test
+	public void factoresPrimosConNumero1EsperaExcepcion() throws ExcepcionNumeroInvalido {
 
 		String numeroRecibido = "1";
-        LinkedList<Integer> factorizacionDe1 = new LinkedList<>();
 
-        Assert.assertEquals(factorizacionDe1,
-                    calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        try {
+            calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+        }catch(ExcepcionNumeroInvalido e){
+            throw e;
+        }
 	}
 
-    @Test(expected = ExcepcionNumeroInvalido.class)
-    public void factoresPrimosConNumero0EsperaExcepcion () {
+    @Test
+    public void factoresPrimosConNumero0EsperaExcepcion () throws ExcepcionNumeroInvalido {
 
         String numeroRecibido = "0";
-        LinkedList<Integer> factorizacionDe1 = new LinkedList<>();
-
-            Assert.assertEquals(factorizacionDe1,
-                    calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        try {
+            calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+        }catch(ExcepcionNumeroInvalido e){
+            throw e;
+        }
     }
 
 
-	@Test(expected = ExcepcionNumeroInvalido.class)
-	public void factoresPrimosConNumeroNegativoEsperaExcepcion() {
+	@Test
+	public void factoresPrimosConNumeroNegativoEsperaExcepcion() throws ExcepcionNumeroInvalido {
 		
         String numeroRecibido = "-25";
-        LinkedList<Integer> factorizacionDeNegativo = new LinkedList<>();
 
-            Assert.assertEquals(factorizacionDeNegativo,
-                    calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido));
+        try {
+            calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
+        }catch(ExcepcionNumeroInvalido e){
+            throw e;
+        }
 	}
 
 }

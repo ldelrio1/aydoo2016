@@ -5,11 +5,14 @@ package ar.edu.untref.aydoo;
  */
 public class Program {
 
-    public static final void main(String args[]) {
+    public static final void main(String args[]) throws ExcepcionIngresoInvalido {
 
+        AnalizadorDeArgumentos analizador = new AnalizadorDeArgumentos();
+
+        analizador.analizarArgumentos(args);
 
         CalculadorDeFactoresPrimos calculador = new CalculadorDeFactoresPrimos();
-        System.out.println(calculador.calcularFactoresPrimos(args[0]));
+        calculador.calcularFactoresPrimos(analizador.getNumero());
 
     }
 
