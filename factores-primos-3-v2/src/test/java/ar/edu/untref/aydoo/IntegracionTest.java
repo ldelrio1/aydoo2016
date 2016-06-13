@@ -53,4 +53,16 @@ public class IntegracionTest {
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 
+    @Test
+    public void numeroYOrdenEsperaAscDefault() throws ExcepcionIngresoInvalido {
+
+        String numero = "10";
+        String [] argumentos = new String[]{numero};
+        analizador.analizarArgumentos(argumentos);
+        calculador.calcularFactoresPrimos(analizador.getNumero());
+        String resultado = calculador.getFactoresPrimos(analizador.getOrden());
+        String resultadoEsperado = " 2 5";
+        Assert.assertEquals( resultadoEsperado,resultado);
+    }
+
 }
