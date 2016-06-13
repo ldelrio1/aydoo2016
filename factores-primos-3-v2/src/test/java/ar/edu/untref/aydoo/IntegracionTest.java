@@ -25,5 +25,29 @@ public class IntegracionTest {
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 
+    @Test
+    public void numeroYOrdenDes() throws ExcepcionIngresoInvalido {
 
+        String numero = "10";
+        String orden = "--sort:des";
+        String [] argumentos = new String[]{numero, orden};
+        analizador.analizarArgumentos(argumentos);
+        calculador.calcularFactoresPrimos(analizador.getNumero());
+        String resultado = calculador.getFactoresPrimos(analizador.getOrden());
+        String resultadoEsperado = " 5 2";
+        Assert.assertEquals( resultadoEsperado,resultado);
+    }
+
+    @Test
+    public void OrdenDesYNumero() throws ExcepcionIngresoInvalido {
+
+        String numero = "10";
+        String orden = "--sort:des";
+        String [] argumentos = new String[]{orden, numero};
+        analizador.analizarArgumentos(argumentos);
+        calculador.calcularFactoresPrimos(analizador.getNumero());
+        String resultado = calculador.getFactoresPrimos(analizador.getOrden());
+        String resultadoEsperado = " 5 2";
+        Assert.assertEquals( resultadoEsperado,resultado);
+    }
 }
