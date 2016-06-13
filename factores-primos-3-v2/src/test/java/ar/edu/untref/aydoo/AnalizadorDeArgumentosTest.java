@@ -59,4 +59,46 @@ public class AnalizadorDeArgumentosTest {
         String numeroEncontrado = analizador.getNumero();
         Assert.assertEquals("10", numeroEncontrado);
     }
+
+    @Test
+    public void ingresaTodosLosArgumentosVerificaOrdenMayusculaConAsc(){
+        String numero = "10";
+        String orden = "--sort:ASC";
+        String [] argumentos = new String[]{numero, orden};
+        analizador.analizarArgumentos(argumentos);
+        String ordenEncontrado = analizador.getOrden();
+        Assert.assertEquals("asc", ordenEncontrado);
+    }
+
+    @Test
+    public void ingresaTodosLosArgumentosVerificaOrdenMayusculaConDes(){
+        String numero = "10";
+        String orden = "--sort:DES";
+        String [] argumentos = new String[]{numero, orden};
+        analizador.analizarArgumentos(argumentos);
+        String ordenEncontrado = analizador.getOrden();
+        Assert.assertEquals("des", ordenEncontrado);
+    }
+
+    @Test
+    public void ingresaTodosLosArgumentosVerificaFormatoMayusculaConPretty(){
+        String numero = "10";
+        String orden = "--sort:asc";
+        String formato = "--format=PRETTY";
+        String [] argumentos = new String[]{numero, orden, formato};
+        analizador.analizarArgumentos(argumentos);
+        String formatoEncontrado = analizador.getFormato();
+        Assert.assertEquals("pretty", formatoEncontrado);
+    }
+
+    @Test
+    public void ingresaTodosLosArgumentosVerificaFormatoMayusculaConQuiet(){
+        String numero = "10";
+        String orden = "--sort:asc";
+        String formato = "--format=QUIET";
+        String [] argumentos = new String[]{numero, orden, formato};
+        analizador.analizarArgumentos(argumentos);
+        String formatoEncontrado = analizador.getFormato();
+        Assert.assertEquals("quiet", formatoEncontrado);
+    }
 }
