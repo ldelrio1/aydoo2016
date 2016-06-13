@@ -47,17 +47,17 @@ public class CalculadorDeFactoresPrimos {
 
     public String getFactoresPrimos(String orden){
 
-        String factoresPrimosOrdenados = null;
+        String factoresPrimosOrdenados = "";
 
         if(orden == "asc"){
             factoresPrimosOrdenados = getResultadoDeFactoresPrimos();
         }else if(orden == "des"){
-            factoresPrimosOrdenados = getFactoresPrimosDescandentes();
+            factoresPrimosOrdenados = getFactoresPrimosDescendentes();
         }
         return factoresPrimosOrdenados;
     }
 
-    private String getFactoresPrimosDescandentes(){
+    private String getFactoresPrimosDescendentes(){
 
         String resultado = "";
         for(int i = factoresPrimos.size()-1; i > -1; i --){
