@@ -10,12 +10,13 @@ public class CalculadorDeFactoresPrimos {
     /**
      * Excepcion de Ingreso Invalido puede mejorar
      */
-    public void calcularFactoresPrimos(String numero) throws ExcepcionNumeroInvalido {
+    public void calcularFactoresPrimos(String numero) throws ExcepcionNumeroInvalido, ExcepcionIngresoInvalido {
 
         int numeroRecibido = 0;
-        if(numero != null){
-            numeroRecibido = Integer.parseInt(numero);
 
+        if(numero != null) {
+
+            numeroRecibido = Integer.parseInt(numero);
             if (numeroRecibido > 1) {
 
                 int dividendo = numeroRecibido;
@@ -27,12 +28,12 @@ public class CalculadorDeFactoresPrimos {
 
                     }
                 }
+            } else {
+                throw new ExcepcionNumeroInvalido();
             }
-
         }else{
-            throw new ExcepcionNumeroInvalido();
+            throw new ExcepcionIngresoInvalido();
         }
-
     }
 
     public String getResultadoDeFactoresPrimos(){

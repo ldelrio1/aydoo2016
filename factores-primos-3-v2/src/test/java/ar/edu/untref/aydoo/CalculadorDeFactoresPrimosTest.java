@@ -41,43 +41,37 @@ public class CalculadorDeFactoresPrimosTest {
  	}
 	
 	@Test
-	public void factoresPrimosConNumero1EsperaExcepcion() throws ExcepcionNumeroInvalido {
-
-		String numeroRecibido = "1";
+	public void factoresPrimosConNumero1EsperaExcepcion() throws ExcepcionNumeroInvalido, ExcepcionIngresoInvalido {
 
         try {
+            String numeroRecibido = "1";
             calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
         }catch(ExcepcionNumeroInvalido e){
-            throw e;
         }
 	}
 
     @Test
-    public void factoresPrimosConNumero0EsperaExcepcion () throws ExcepcionNumeroInvalido {
+    public void factoresPrimosConNumero0EsperaExcepcion () throws ExcepcionNumeroInvalido, ExcepcionIngresoInvalido {
 
-        String numeroRecibido = "0";
         try {
+            String numeroRecibido = "0";
             calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
         }catch(ExcepcionNumeroInvalido e){
-            throw e;
         }
     }
 
-
-	@Test
-	public void factoresPrimosConNumeroNegativoEsperaExcepcion() throws ExcepcionNumeroInvalido {
-		
-        String numeroRecibido = "-25";
+    @Test
+    public void factoresPrimosConNumeroNuloEsperaExcepcion() throws ExcepcionNumeroInvalido, ExcepcionIngresoInvalido {
 
         try {
+            String numeroRecibido = null;
             calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
-        }catch(ExcepcionNumeroInvalido e){
-            throw e;
+        }catch (ExcepcionIngresoInvalido e){
         }
-	}
+    }
 
     @Test
-    public void factoresPrimosEsperaOrdenAscendente(){
+    public void factoresPrimosEsperaOrdenAscendente() throws ExcepcionIngresoInvalido {
         String numeroRecibido = "18";
         String factorizacionDe18 = " 2 3 3";
 
@@ -87,7 +81,7 @@ public class CalculadorDeFactoresPrimosTest {
     }
 
     @Test
-    public void factoresPrimosEsperaOrdenDescendente(){
+    public void factoresPrimosEsperaOrdenDescendente() throws ExcepcionIngresoInvalido {
         String numeroRecibido = "18";
         String factorizacionDe18 = " 3 3 2";
 
@@ -95,6 +89,4 @@ public class CalculadorDeFactoresPrimosTest {
 
         Assert.assertEquals(factorizacionDe18, calculadorDeFactoresPrimos.getFactoresPrimos("des"));
     }
-
-
 }
