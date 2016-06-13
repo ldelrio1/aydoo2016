@@ -57,7 +57,7 @@ public class CalculadorDeFactoresPrimos {
         return factoresPrimosOrdenados;
     }
 
-    protected String getFactoresPrimosDescandentes(){
+    private String getFactoresPrimosDescandentes(){
 
         String resultado = "";
         for(int i = factoresPrimos.size()-1; i > -1; i --){
@@ -65,7 +65,6 @@ public class CalculadorDeFactoresPrimos {
         };
         return resultado;
     }
-
 
 }
 

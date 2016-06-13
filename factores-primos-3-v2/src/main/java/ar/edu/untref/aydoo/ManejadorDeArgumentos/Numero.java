@@ -12,7 +12,7 @@ public class Numero extends ManejadorDeArgumentos {
     @Override
     public void checkearArgumento(String numeroArg) {
 
-        if ((numeroArg   != null) && (Character.isDigit(numeroArg.charAt(0)))){
+        if ((numeroArg != null) && (Character.isDigit(numeroArg.charAt(0)))){
             this.numero = numeroArg;
 
         }else if(this.getSiguiente()!= null){
