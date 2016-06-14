@@ -14,7 +14,7 @@ public class FormatoDeSalidaTest {
     public void salidaConFormatoPretty(){
 
         String numero = "10";
-        String factoresPrimosOrdenados = " 2 5";
+        String factoresPrimosOrdenados = "2 5";
         String formato = "pretty";
         String salida = formatoSalida.salidaConFormato(numero, factoresPrimosOrdenados, formato);
 
@@ -25,10 +25,10 @@ public class FormatoDeSalidaTest {
     public void salidaConFormatoQuiet(){
 
         String numero = "10";
-        String factoresPrimosOrdenados = " 2 5";
+        String factoresPrimosOrdenados = "2 5";
         String formato = "quiet";
         String salida = formatoSalida.salidaConFormato(numero, factoresPrimosOrdenados, formato);
 
-        Assert.assertEquals("\n2\n5", salida);
+        Assert.assertEquals("2\n5", salida);
     }
 }

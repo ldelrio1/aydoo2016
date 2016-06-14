@@ -10,7 +10,7 @@ public class FormatoDeSalida {
         String salida = null;
 
         if (formato.equals("pretty")){
-            salida = "Factores primos "+ numero + ":" + factoresPrimosOrdenados;
+            salida = "Factores primos "+ numero + ": " + factoresPrimosOrdenados;
         }
         else if (formato.equals("quiet")){
             salida = factoresPrimosOrdenados.replace(" ", "\n");

@@ -32,7 +32,7 @@ public class IntegracionTest {
         analizador.analizarArgumentos(argumentos);
         calculador.calcularFactoresPrimos(analizador.getNumero());
         String resultado = calculador.getFactoresPrimos(analizador.getOrden());
-        String resultadoEsperado = " 2 5";
+        String resultadoEsperado = "2 5 ";
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 
@@ -45,7 +45,7 @@ public class IntegracionTest {
         analizador.analizarArgumentos(argumentos);
         calculador.calcularFactoresPrimos(analizador.getNumero());
         String resultado = calculador.getFactoresPrimos(analizador.getOrden());
-        String resultadoEsperado = " 5 2";
+        String resultadoEsperado = "5 2 ";
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 
@@ -58,7 +58,7 @@ public class IntegracionTest {
         analizador.analizarArgumentos(argumentos);
         calculador.calcularFactoresPrimos(analizador.getNumero());
         String resultado = calculador.getFactoresPrimos(analizador.getOrden());
-        String resultadoEsperado = " 5 2";
+        String resultadoEsperado = "5 2 ";
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 

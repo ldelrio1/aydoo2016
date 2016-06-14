@@ -13,7 +13,7 @@ public class CalculadorDeFactoresPrimosTest {
 		
 	    String numeroRecibido = "132";
 
-        String factorizacionDe132 = " 2 2 3 11";
+        String factorizacionDe132 = "2 2 3 11 ";
         calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 
         Assert.assertEquals(factorizacionDe132,calculadorDeFactoresPrimos.getResultadoDeFactoresPrimos());
@@ -23,7 +23,7 @@ public class CalculadorDeFactoresPrimosTest {
 	public void factoresPrimosConNumero360() throws ExcepcionIngresoInvalido {
 
         String numeroRecibido = "360";
-        String factorizacionDe360 = " 2 2 2 3 3 5";
+        String factorizacionDe360 = "2 2 2 3 3 5 ";
         calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 
         Assert.assertEquals(factorizacionDe360, calculadorDeFactoresPrimos.getResultadoDeFactoresPrimos());
@@ -33,7 +33,7 @@ public class CalculadorDeFactoresPrimosTest {
 	public void factoresPrimosConNumero18() throws ExcepcionIngresoInvalido {
 
         String numeroRecibido = "18";
-        String factorizacionDe18 = " 2 3 3";
+        String factorizacionDe18 = "2 3 3 ";
 
         calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 
@@ -73,7 +73,7 @@ public class CalculadorDeFactoresPrimosTest {
     @Test
     public void factoresPrimosEsperaOrdenAscendente() throws ExcepcionIngresoInvalido {
         String numeroRecibido = "18";
-        String factorizacionDe18 = " 2 3 3";
+        String factorizacionDe18 = "2 3 3 ";
 
         calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 
@@ -83,7 +83,7 @@ public class CalculadorDeFactoresPrimosTest {
     @Test
     public void factoresPrimosEsperaOrdenDescendente() throws ExcepcionIngresoInvalido {
         String numeroRecibido = "18";
-        String factorizacionDe18 = " 3 3 2";
+        String factorizacionDe18 = "3 3 2 ";
 
         calculadorDeFactoresPrimos.calcularFactoresPrimos(numeroRecibido);
 

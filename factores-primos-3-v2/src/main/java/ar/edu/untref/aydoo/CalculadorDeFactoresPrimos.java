@@ -43,7 +43,7 @@ public class CalculadorDeFactoresPrimos {
 
         resultado = "";
         for(int i = 0; i < factoresPrimos.size(); i ++){
-            resultado = resultado + " " + factoresPrimos.get(i).toString();
+            resultado = resultado + factoresPrimos.get(i).toString() + " ";
         };
         return resultado;
     }
@@ -64,7 +64,7 @@ public class CalculadorDeFactoresPrimos {
 
         String resultado = "";
         for(int i = factoresPrimos.size()-1; i > -1; i --){
-            resultado = resultado + " " + factoresPrimos.get(i).toString();
+            resultado = resultado + factoresPrimos.get(i).toString() + " ";
         };
         return resultado;
     }
