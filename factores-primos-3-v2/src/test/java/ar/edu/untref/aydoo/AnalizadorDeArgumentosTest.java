@@ -101,4 +101,29 @@ public class AnalizadorDeArgumentosTest {
         String formatoEncontrado = analizador.getFormato();
         Assert.assertEquals("quiet", formatoEncontrado);
     }
+
+    @Test
+    public void ordenIncorrectoEsperaExcepcion() throws ExcepcionOrdenInvalido{
+        String numero = "10";
+        String orden = "--sort:as";
+        String [] argumentos = new String[]{numero, orden};
+        try {
+            analizador.analizarArgumentos(argumentos);
+        }catch (ExcepcionOrdenInvalido e){
+
+        }
+    }
+
+    @Test
+    public void formatoIncorrectoEsperaExcepcion() throws ExcepcionFormatoInvalido{
+        String numero = "10";
+        String formato = "--format=que";
+        String [] argumentos = new String[]{numero, formato};
+
+        try{
+            analizador.analizarArgumentos(argumentos);
+        }catch (ExcepcionFormatoInvalido e){
+
+        }
+    }
 }
