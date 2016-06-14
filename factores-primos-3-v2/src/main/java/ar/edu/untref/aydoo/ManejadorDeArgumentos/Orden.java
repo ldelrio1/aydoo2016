@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo.ManejadorDeArgumentos;
 
 
-import ar.edu.untref.aydoo.ExcepcionOrdenInvalido;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionOrdenInvalido;
 
 /**
  * Created by lucas on 11/06/16.

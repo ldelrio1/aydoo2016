@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo.ManejadorDeArgumentos;
 
-import ar.edu.untref.aydoo.ExcepcionFormatoInvalido;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionFormatoInvalido;
 
 /**
  * Created by lucas on 11/06/16.

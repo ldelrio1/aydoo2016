@@ -1,8 +1,5 @@
 package ar.edu.untref.aydoo;
-import ar.edu.untref.aydoo.ManejadorDeArgumentos.Formato;
-import ar.edu.untref.aydoo.ManejadorDeArgumentos.ManejadorDeArgumentos;
-import ar.edu.untref.aydoo.ManejadorDeArgumentos.Numero;
-import ar.edu.untref.aydoo.ManejadorDeArgumentos.Orden;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionIngresoInvalido;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,7 +12,7 @@ public class IntegracionTest {
     CalculadorDeFactoresPrimos calculador = new CalculadorDeFactoresPrimos();
 
     @Test
-    public void noEncuentraNumeroEnArgumentos() throws ExcepcionIngresoInvalido{
+    public void noEncuentraNumeroEnArgumentos() throws ExcepcionIngresoInvalido {
         String orden = "--sort:asc";
         String formato = "--format=pretty";
         String [] argumentos = new String[]{orden, formato};
@@ -65,15 +62,4 @@ public class IntegracionTest {
         Assert.assertEquals( resultadoEsperado,resultado);
     }
 
-    @Test
-    public void numeroYOrdenEsperaAscDefault() throws ExcepcionIngresoInvalido {
-
-        String numero = "10";
-        String [] argumentos = new String[]{numero};
-        analizador.analizarArgumentos(argumentos);
-        calculador.calcularFactoresPrimos(analizador.getNumero());
-        String resultado = calculador.getFactoresPrimos(analizador.getOrden());
-        String resultadoEsperado = " 2 5";
-        Assert.assertEquals( resultadoEsperado,resultado);
-    }
 }

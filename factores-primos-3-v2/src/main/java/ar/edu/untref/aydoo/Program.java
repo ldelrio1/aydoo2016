@@ -1,5 +1,7 @@
 package ar.edu.untref.aydoo;
 
+import ar.edu.untref.aydoo.Excepciones.ExcepcionIngresoInvalido;
+
 /**
  * Created by lucas on 10/06/16.
  */

@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Excepciones;
 
 /**
  * Created by lucas on 13/06/16.

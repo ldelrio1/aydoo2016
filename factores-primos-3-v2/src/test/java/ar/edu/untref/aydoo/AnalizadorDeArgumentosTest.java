@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 
+import ar.edu.untref.aydoo.Excepciones.ExcepcionArchivoInvalido;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionFormatoInvalido;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionOrdenInvalido;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -103,7 +106,7 @@ public class AnalizadorDeArgumentosTest {
     }
 
     @Test
-    public void ordenIncorrectoEsperaExcepcion() throws ExcepcionOrdenInvalido{
+    public void ordenIncorrectoEsperaExcepcion() throws ExcepcionOrdenInvalido {
         String numero = "10";
         String orden = "--sort:as";
         String [] argumentos = new String[]{numero, orden};
@@ -115,7 +118,7 @@ public class AnalizadorDeArgumentosTest {
     }
 
     @Test
-    public void formatoIncorrectoEsperaExcepcion() throws ExcepcionFormatoInvalido{
+    public void formatoIncorrectoEsperaExcepcion() throws ExcepcionFormatoInvalido {
         String numero = "10";
         String formato = "--format=que";
         String [] argumentos = new String[]{numero, formato};
@@ -149,7 +152,7 @@ public class AnalizadorDeArgumentosTest {
     }
 
     @Test
-    public void verificaUnArchivoIncorrectoEsperaExcepcion() throws ExcepcionArchivoInvalido{
+    public void verificaUnArchivoIncorrectoEsperaExcepcion() throws ExcepcionArchivoInvalido {
         String numero = "10";
         String archivo = "--output-file=salida.tyc";
         String [] argumentos = new String[]{numero, archivo};

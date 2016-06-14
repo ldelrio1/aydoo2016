@@ -1,8 +1,8 @@
 package ar.edu.untref.aydoo;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionIngresoInvalido;
+import ar.edu.untref.aydoo.Excepciones.ExcepcionNumeroInvalido;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.LinkedList;
 
 public class CalculadorDeFactoresPrimosTest {
 
