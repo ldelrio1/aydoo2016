@@ -13,7 +13,7 @@ public class Program {
 
         CalculadorDeFactoresPrimos calculador = new CalculadorDeFactoresPrimos();
         calculador.calcularFactoresPrimos(analizador.getNumero());
-        System.out.println(calculador.getFactoresPrimos("asc"));
+        System.out.println(calculador.getFactoresPrimos(analizador.getOrden()));
 
     }
 

@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo.ManejadorDeArgumentos;
 
-import ar.edu.untref.aydoo.ManejadorDeArgumentos.ManejadorDeArgumentos;
+import ar.edu.untref.aydoo.ExcepcionFormatoInvalido;
 
 /**
  * Created by lucas on 11/06/16.
@@ -8,7 +8,7 @@ import ar.edu.untref.aydoo.ManejadorDeArgumentos.ManejadorDeArgumentos;
 public class Formato extends ManejadorDeArgumentos {
 
     private ManejadorDeArgumentos manejadorDeArgumentos;
-    private String formatoRecibido = "--format=";
+    private final String funcionFormato = "--format=";
     private String formato;
 
     public Formato(){
@@ -17,8 +17,17 @@ public class Formato extends ManejadorDeArgumentos {
 
     @Override
     public void checkearArgumento(String arg) {
-        if (arg.startsWith(formatoRecibido)){
-            formato = arg.substring(9).toLowerCase();
+
+        String formatoRecibido = null;
+        if (arg.startsWith(funcionFormato)){
+
+            formatoRecibido = arg.substring(9).toLowerCase();
+
+            if (formatoRecibido.equals("pretty")|| formatoRecibido.equals("quiet")){
+                formato = formatoRecibido;
+            }else{
+                throw new ExcepcionFormatoInvalido();
+            }
         }
     }
 
