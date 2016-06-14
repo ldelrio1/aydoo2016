@@ -15,6 +15,18 @@ public class IntegracionTest {
     CalculadorDeFactoresPrimos calculador = new CalculadorDeFactoresPrimos();
 
     @Test
+    public void noEncuentraNumeroEnArgumentos() throws ExcepcionIngresoInvalido{
+        String orden = "--sort:asc";
+        String formato = "--format=pretty";
+        String [] argumentos = new String[]{orden, formato};
+        analizador.analizarArgumentos(argumentos);
+        try {
+            calculador.calcularFactoresPrimos(analizador.getNumero());
+        } catch (ExcepcionIngresoInvalido e) {
+        }
+    }
+
+    @Test
     public void numeroYOrdenAsc() throws ExcepcionIngresoInvalido {
 
         String numero = "10";
