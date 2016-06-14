@@ -126,4 +126,38 @@ public class AnalizadorDeArgumentosTest {
 
         }
     }
+
+    @Test
+    public void verificaArchivo(){
+        String numero = "10";
+        String archivo = "--output-file=salida.txt";
+        String [] argumentos = new String[]{numero, archivo};
+        analizador.analizarArgumentos(argumentos);
+        String archivoEncontrado = analizador.getArchivo();
+        Assert.assertEquals("salida.txt", archivoEncontrado);
+    }
+
+    @Test
+    public void verificaArchivoConMasDeUnArgumento(){
+        String numero = "10";
+        String orden = "--sort:DES";
+        String archivo = "--output-file=salida.txt";
+        String [] argumentos = new String[]{numero, archivo, orden};
+        analizador.analizarArgumentos(argumentos);
+        String archivoEncontrado = analizador.getArchivo();
+        Assert.assertEquals("salida.txt", archivoEncontrado);
+    }
+
+    @Test
+    public void verificaUnArchivoIncorrectoEsperaExcepcion() throws ExcepcionArchivoInvalido{
+        String numero = "10";
+        String archivo = "--output-file=salida.tyc";
+        String [] argumentos = new String[]{numero, archivo};
+        try{
+            analizador.analizarArgumentos(argumentos);
+        }catch (ExcepcionArchivoInvalido e){
+
+        }
+
+    }
 }

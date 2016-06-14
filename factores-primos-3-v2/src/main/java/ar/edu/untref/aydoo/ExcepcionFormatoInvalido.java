@@ -5,8 +5,8 @@ package ar.edu.untref.aydoo;
  */
 public class ExcepcionFormatoInvalido extends RuntimeException {
 
-    private final static String mensajeNumeroNegativo = "\n Formato no aceptado \n Las opciones posibles son pretty o quiet";
+    private final static String mensajeFormatoInvalido = "\n Formato no aceptado \n Las opciones posibles son pretty o quiet";
     public ExcepcionFormatoInvalido(){
-        super(mensajeNumeroNegativo);
+        super(mensajeFormatoInvalido);
     }
 }

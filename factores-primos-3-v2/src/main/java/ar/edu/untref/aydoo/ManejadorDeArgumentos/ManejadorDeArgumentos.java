@@ -22,5 +22,8 @@ public abstract class ManejadorDeArgumentos {
     public String getFormato(){
         return getFormato();
     }
+    public String getArchivo(){
+        return getArchivo();
+    }
 
 }

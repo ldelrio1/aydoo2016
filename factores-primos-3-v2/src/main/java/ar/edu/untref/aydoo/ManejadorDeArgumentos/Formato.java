@@ -28,6 +28,8 @@ public class Formato extends ManejadorDeArgumentos {
             }else{
                 throw new ExcepcionFormatoInvalido();
             }
+        }else if(this.getSiguiente()!= null){
+            this.getSiguiente().checkearArgumento(arg);
         }
     }
 

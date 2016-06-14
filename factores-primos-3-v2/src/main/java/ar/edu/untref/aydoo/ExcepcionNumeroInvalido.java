@@ -5,10 +5,10 @@ package ar.edu.untref.aydoo;
  */
 public class ExcepcionNumeroInvalido extends  RuntimeException {
 
-    private final static String mensajeNumeroNegativo = "Ingresó un numero invalido \n Ingrese un numero mayor a 1";
+    private final static String mensajeNumeroMenorA1 = "Ingresó un numero invalido \n Ingrese un numero mayor a 1";
 
     public ExcepcionNumeroInvalido(){
-        super(mensajeNumeroNegativo);
+        super(mensajeNumeroMenorA1);
     }
 
 }
