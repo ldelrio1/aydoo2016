@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 import ar.edu.untref.aydoo.Excepciones.ExcepcionIngresoInvalido;
+import ar.edu.untref.aydoo.AnalizadorDeArgumentos;
+import ar.edu.untref.aydoo.Salida.FormatoDeSalida;
+import ar.edu.untref.aydoo.CalculadorDeFactoresPrimos;
 import org.junit.Assert;
 import org.junit.Test;
 

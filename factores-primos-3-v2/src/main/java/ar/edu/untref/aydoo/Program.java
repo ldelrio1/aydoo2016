@@ -1,6 +1,12 @@
 package ar.edu.untref.aydoo;
 
 import ar.edu.untref.aydoo.Excepciones.ExcepcionIngresoInvalido;
+import ar.edu.untref.aydoo.AnalizadorDeArgumentos;
+import ar.edu.untref.aydoo.CalculadorDeFactoresPrimos;
+import ar.edu.untref.aydoo.Salida.*;
+
+
+
 
 import java.io.IOException;
 

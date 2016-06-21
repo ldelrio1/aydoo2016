@@ -1,4 +1,7 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Salida;
+
+import ar.edu.untref.aydoo.AnalizadorDeArgumentos;
+import ar.edu.untref.aydoo.CalculadorDeFactoresPrimos;
 
 import java.io.IOException;
 

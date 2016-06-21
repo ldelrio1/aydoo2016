@@ -1,5 +1,6 @@
 package ar.edu.untref.aydoo;
 
+import ar.edu.untref.aydoo.Salida.FormatoDeSalida;
 import org.junit.Assert;
 import org.junit.Test;
 

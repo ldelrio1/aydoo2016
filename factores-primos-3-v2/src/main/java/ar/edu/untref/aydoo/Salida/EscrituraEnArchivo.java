@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Salida;
 
 import java.io.BufferedWriter;
 import java.io.File;
