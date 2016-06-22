@@ -14,4 +14,5 @@ public class Candidato {
     public Partido getPartido(){
         return partido;
     }
+
 }

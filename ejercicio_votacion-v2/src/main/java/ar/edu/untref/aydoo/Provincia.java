@@ -43,6 +43,19 @@ public class Provincia {
         return votosDeCantidatos;
     }
 
+    public int obtenerVotosDeCandidato(Candidato unCandidato){
+
+        int votosDeCandidato = 0;
+
+        for (int i = 0; i < listaDeVotos.size(); i++){
+            if(listaDeVotos.get(i).equals(unCandidato)){
+                votosDeCandidato ++;
+            }
+        }
+
+        return votosDeCandidato;
+    }
+
     public Map<Partido, Integer> obtenerVotosDePartidos(){
 
         Map<Partido, Integer> votosDePartidos = new HashMap<>();

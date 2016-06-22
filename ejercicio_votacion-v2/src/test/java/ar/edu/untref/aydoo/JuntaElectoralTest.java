@@ -19,6 +19,7 @@ public class JuntaElectoralTest {
 
     Provincia buenosAires = new Provincia ("Buenos Aires");
     Provincia mendoza = new Provincia("Mendoza");
+    Provincia entreRios = new Provincia ("Entre Rios");
 
     @Test
     public void obtienePartidoMasVotadoEnUnaProvinciaCon1VotoYUnaProvincia(){
@@ -70,5 +71,58 @@ public class JuntaElectoralTest {
         Assert.assertEquals(fIT, junta.obtenerPartidoMasVotadoEnProvincia(mendoza));
     }
 
+    @Test
+    public void obtieneCandidatoMasVotadoANivelNacionalConUnaProvinciaIngresadaYUnCandidato(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(scioli);
+        junta.agregarProvincia(buenosAires);
+        Voto voto = new Voto(scioli, buenosAires);
+
+        Assert.assertEquals(scioli, junta.obtenerCandidatoMasVotado());
+    }
+
+    @Test
+    public void obtieneCandidatoMasVotadoANivelNacionalConUnaProvinciaIngresadaYVariosCandidatos(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(scioli);
+        junta.agregarCandidato(macri);
+        junta.agregarCandidato(delCanio);
+        junta.agregarProvincia(buenosAires);
+        Voto voto1 = new Voto(scioli, buenosAires);
+        Voto voto2 = new Voto(macri, buenosAires);
+        Voto voto3 = new Voto(scioli, buenosAires);
+        Voto voto4 = new Voto(delCanio, buenosAires);
+
+        Assert.assertEquals(scioli, junta.obtenerCandidatoMasVotado());
+    }
+
+    @Test
+    public void obtieneCandidatoMasVotadoANivelNacionalConVariasProvinciasYVariosCandidatos(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(scioli);
+        junta.agregarCandidato(macri);
+        junta.agregarCandidato(delCanio);
+
+        junta.agregarProvincia(buenosAires);
+        junta.agregarProvincia(mendoza);
+        junta.agregarProvincia(entreRios);
+
+        Voto voto1 = new Voto(scioli, entreRios);
+        Voto voto2 = new Voto(macri, buenosAires);
+        Voto voto3 = new Voto(scioli, buenosAires);
+        Voto voto4 = new Voto(macri, entreRios);
+        Voto voto5 = new Voto(macri, buenosAires);
+        Voto voto6 = new Voto(scioli, buenosAires);
+        Voto voto7 = new Voto(delCanio, mendoza);
+        Voto voto8 = new Voto(macri, entreRios);
+
+        Assert.assertEquals(macri, junta.obtenerCandidatoMasVotado());
+    }
 
 }
