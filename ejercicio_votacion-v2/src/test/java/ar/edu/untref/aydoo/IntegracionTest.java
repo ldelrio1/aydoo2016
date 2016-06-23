@@ -11,6 +11,8 @@ public class IntegracionTest {
     Partido cambiemos = new Partido ("Cambiemos");
     Candidato macri = new Candidato ("Macri", cambiemos);
 
+    Candidato carrio = new Candidato ("Carrió", cambiemos);
+
     Partido frenteParaLaVictoria = new Partido("Frente para la victoria");
     Candidato scioli = new Candidato("Scioli", frenteParaLaVictoria);
 
@@ -90,6 +92,32 @@ public class IntegracionTest {
         partidoResultante = junta.obtenerPartidoMasVotadoEnProvincia(mendoza);
 
         Assert.assertEquals(fIT, partidoResultante);
+    }
+
+    @Test
+    public void obtienePartidoMasVotadoEnUnaProvinciaConVariosVotosVariasProvinciasVariosCandidatosEnUnPartido(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(macri);
+        junta.agregarCandidato(scioli);
+        junta.agregarCandidato(delCanio);
+        junta.agregarCandidato(carrio);
+        Voto voto1 = new Voto(delCanio, mendoza);
+        Voto voto2 = new Voto(macri, buenosAires);
+        Voto voto3 = new Voto(scioli, buenosAires);
+        Voto voto4 = new Voto(delCanio, mendoza);
+        Voto voto5 = new Voto(macri, buenosAires);
+        Voto voto6 = new Voto(scioli, buenosAires);
+        Voto voto7 = new Voto(delCanio, mendoza);
+        Voto voto8 = new Voto(carrio, buenosAires);
+        Voto voto9 = new Voto(carrio, buenosAires);
+        Voto voto10 = new Voto(scioli, mendoza);
+
+        Partido partidoResultante;
+        partidoResultante = junta.obtenerPartidoMasVotadoEnProvincia(buenosAires);
+
+        Assert.assertEquals(cambiemos, partidoResultante);
     }
 
     @Test

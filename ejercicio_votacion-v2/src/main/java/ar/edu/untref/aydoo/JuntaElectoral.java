@@ -7,6 +7,10 @@ import java.util.Map;
 /**
  * Created by lucas on 22/06/16.
  */
+
+/**
+ * Faltaría contemplar el caso de que empaten en cantidad de votos
+ */
 public class JuntaElectoral {
 
     private LinkedList <Candidato> listaDeCandidatos;
