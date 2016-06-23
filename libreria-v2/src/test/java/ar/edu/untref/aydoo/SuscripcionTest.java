@@ -66,7 +66,7 @@ public class SuscripcionTest {
     @Test
     public void suscripcionDeArticuloDeLibreriaEsperaExcepcion(){
 
-        ArticuloDeLibreria lapicera = new ArticuloDeLibreria("lapicera Bic", 5);
+        ArticuloDeLibreria lapicera = new ArticuloDeLibreria("lapicera Bic", 5, 1);
         try {
             Suscripcion suscripcionDeArticuloDeLibreria = new Suscripcion(lapicera, Frecuencia.MENSUAL);
             Assert.assertEquals(5, suscripcionDeArticuloDeLibreria.getPrecio(), 0.01);

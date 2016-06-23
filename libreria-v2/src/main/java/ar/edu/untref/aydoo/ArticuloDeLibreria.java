@@ -7,9 +7,13 @@ public class ArticuloDeLibreria extends Producto {
 
     private double iva;
 
-    public ArticuloDeLibreria(String nombre, double precio){
+    public ArticuloDeLibreria(String nombre, double precio, int cantidad) {
         super.setNombre(nombre);
-        super.setPrecio(precio);
+        if (cantidad > 0){
+            super.setPrecio(precio * cantidad);
+        }else {
+            throw new ExcepcionCantidadIncorrecta();
+        }
         iva = 0.21;
     }
 
