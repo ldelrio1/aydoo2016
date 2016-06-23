@@ -38,8 +38,8 @@ public class JuntaElectoral {
 
         for (int i = 0; i < listaDePartidos.size(); i++){
 
-            if(unaProvincia.obtenerVotosDePartidos().containsKey(listaDePartidos.get(i))){
-                cantidadDeVotosActual = unaProvincia.obtenerVotosDePartidos().get(listaDePartidos.get(i));
+            if(unaProvincia.obtenerTotalDeVotosDePartidos().containsKey(listaDePartidos.get(i))){
+                cantidadDeVotosActual = unaProvincia.obtenerTotalDeVotosDePartidos().get(listaDePartidos.get(i));
 
                 if (cantidadDeVotosActual > mayorCantidadDeVotos){
                     mayorCantidadDeVotos = cantidadDeVotosActual;
@@ -50,7 +50,7 @@ public class JuntaElectoral {
         return partidoMasVotado;
     }
 
-    public Candidato obtenerCandidatoMasVotado() {
+    public Candidato obtenerCandidatoMasVotadoEnNacion() {
 
         int mayorCantidadDeVotos = 0;
         int cantidadDeVotosActual;
@@ -81,10 +81,24 @@ public class JuntaElectoral {
 
             for(int j = 0; j < listaDeProvincias.size(); j++){
 
-                int votosDeCandidato = listaDeProvincias.get(j).obtenerVotosDeCandidato(listaDeCandidatos.get(i));
-                votosDeCandidatosEnNacion.put(listaDeCandidatos.get(i), votosDeCandidato);
+                int votosDeCandidatoEnUnaProvincia = listaDeProvincias.get(j).obtenerTotalDeVotosDeCandidato(listaDeCandidatos.get(i));
+                int votosDeCandidatoAcumulados = votosDeCandidatosEnNacion.get(listaDeCandidatos.get(i));
+                votosDeCandidatosEnNacion.put(listaDeCandidatos.get(i), votosDeCandidatoAcumulados + votosDeCandidatoEnUnaProvincia);
             }
         }
         return votosDeCandidatosEnNacion;
+    }
+
+    public int obtenerCantidadDeVotosDeCandidatoEnNacion(Candidato unCandidato) {
+
+        int cantidadDeVotos;
+
+        if(obtenerTotalDeVotosDeCadaCandidatoEnNacion().containsKey(unCandidato)){
+            cantidadDeVotos = obtenerTotalDeVotosDeCadaCandidatoEnNacion().get(unCandidato);
+        }else{
+            throw new ExcepcionCandidatoInexistente();
+        }
+
+        return cantidadDeVotos;
     }
 }

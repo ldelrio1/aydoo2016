@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Created by lucas on 22/06/16.
+ * Created by lucas on 23/06/16.
  */
-public class JuntaElectoralTest {
+public class IntegracionTest {
 
     Partido cambiemos = new Partido ("Cambiemos");
     Candidato macri = new Candidato ("Macri", cambiemos);
@@ -22,6 +22,18 @@ public class JuntaElectoralTest {
     Provincia entreRios = new Provincia ("Entre Rios");
 
     @Test
+    public void emisionDeVoto(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+        junta.agregarCandidato(macri);
+        junta.agregarProvincia(buenosAires);
+        Voto unVoto = new Voto(macri, buenosAires);
+
+        int cantidadDeVotos = buenosAires.contarVotos();
+        Assert.assertEquals(1, cantidadDeVotos);
+    }
+
+    @Test
     public void obtienePartidoMasVotadoEnUnaProvinciaCon1VotoYUnaProvincia(){
 
         JuntaElectoral junta = new JuntaElectoral();
@@ -30,7 +42,10 @@ public class JuntaElectoralTest {
         junta.agregarCandidato(scioli);
         Voto unVoto = new Voto(macri, buenosAires);
 
-        Assert.assertEquals(cambiemos, junta.obtenerPartidoMasVotadoEnProvincia(buenosAires));
+        Partido partidoResultante;
+        partidoResultante = junta.obtenerPartidoMasVotadoEnProvincia(buenosAires);
+
+        Assert.assertEquals(cambiemos, partidoResultante);
     }
 
     @Test
@@ -48,7 +63,10 @@ public class JuntaElectoralTest {
         Voto voto5 = new Voto(scioli, buenosAires);
         Voto voto6 = new Voto(scioli, buenosAires);
 
-        Assert.assertEquals(frenteParaLaVictoria, junta.obtenerPartidoMasVotadoEnProvincia(buenosAires));
+        Partido partidoResultante;
+        partidoResultante = junta.obtenerPartidoMasVotadoEnProvincia(buenosAires);
+
+        Assert.assertEquals(frenteParaLaVictoria, partidoResultante);
     }
 
     @Test
@@ -68,7 +86,10 @@ public class JuntaElectoralTest {
         Voto voto7 = new Voto(delCanio, mendoza);
         Voto voto8 = new Voto(scioli, mendoza);
 
-        Assert.assertEquals(fIT, junta.obtenerPartidoMasVotadoEnProvincia(mendoza));
+        Partido partidoResultante;
+        partidoResultante = junta.obtenerPartidoMasVotadoEnProvincia(mendoza);
+
+        Assert.assertEquals(fIT, partidoResultante);
     }
 
     @Test
@@ -80,7 +101,10 @@ public class JuntaElectoralTest {
         junta.agregarProvincia(buenosAires);
         Voto voto = new Voto(scioli, buenosAires);
 
-        Assert.assertEquals(scioli, junta.obtenerCandidatoMasVotado());
+        Candidato candidatoResultante;
+        candidatoResultante = junta.obtenerCandidatoMasVotadoEnNacion();
+
+        Assert.assertEquals(scioli, candidatoResultante);
     }
 
     @Test
@@ -97,7 +121,10 @@ public class JuntaElectoralTest {
         Voto voto3 = new Voto(scioli, buenosAires);
         Voto voto4 = new Voto(delCanio, buenosAires);
 
-        Assert.assertEquals(scioli, junta.obtenerCandidatoMasVotado());
+        Candidato candidatoResultante;
+        candidatoResultante = junta.obtenerCandidatoMasVotadoEnNacion();
+
+        Assert.assertEquals(scioli, candidatoResultante);
     }
 
     @Test
@@ -122,7 +149,63 @@ public class JuntaElectoralTest {
         Voto voto7 = new Voto(delCanio, mendoza);
         Voto voto8 = new Voto(macri, entreRios);
 
-        Assert.assertEquals(macri, junta.obtenerCandidatoMasVotado());
+        Candidato candidatoResultante;
+        candidatoResultante = junta.obtenerCandidatoMasVotadoEnNacion();
+
+        Assert.assertEquals(macri, candidatoResultante);
     }
 
+    @Test
+    public void obtieneCantidadDeVotosDeUnCandidatoEnNacion(){
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(scioli);
+        junta.agregarCandidato(macri);
+        junta.agregarCandidato(delCanio);
+
+        junta.agregarProvincia(buenosAires);
+        junta.agregarProvincia(mendoza);
+        junta.agregarProvincia(entreRios);
+
+        Voto voto1 = new Voto(scioli, entreRios);
+        Voto voto2 = new Voto(macri, buenosAires);
+        Voto voto3 = new Voto(scioli, buenosAires);
+        Voto voto4 = new Voto(macri, entreRios);
+        Voto voto5 = new Voto(macri, buenosAires);
+        Voto voto6 = new Voto(scioli, buenosAires);
+        Voto voto7 = new Voto(scioli, buenosAires);
+
+        int totalDeVotosResultantes = junta.obtenerCantidadDeVotosDeCandidatoEnNacion(scioli);
+
+        Assert.assertEquals(4, totalDeVotosResultantes);
+
+    }
+
+    @Test
+    public void obtienerCantidadDeVotosDeUnCandidatoEnNacionDeCandidatoInexistente()throws ExcepcionCandidatoInexistente{
+
+        JuntaElectoral junta = new JuntaElectoral();
+
+        junta.agregarCandidato(scioli);
+        junta.agregarCandidato(macri);
+
+        junta.agregarProvincia(buenosAires);
+        junta.agregarProvincia(mendoza);
+        junta.agregarProvincia(entreRios);
+
+        Voto voto1 = new Voto(scioli, entreRios);
+        Voto voto2 = new Voto(macri, buenosAires);
+        Voto voto3 = new Voto(scioli, buenosAires);
+        Voto voto4 = new Voto(macri, entreRios);
+        Voto voto5 = new Voto(macri, buenosAires);
+        Voto voto6 = new Voto(scioli, buenosAires);
+        Voto voto7 = new Voto(scioli, buenosAires);
+
+        try{
+            Assert.assertEquals(2, junta.obtenerCantidadDeVotosDeCandidatoEnNacion(delCanio));
+        }
+        catch (ExcepcionCandidatoInexistente e){
+        }
+    }
 }

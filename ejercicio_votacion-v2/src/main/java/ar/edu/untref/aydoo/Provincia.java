@@ -16,34 +16,17 @@ public class Provincia {
         listaDeVotos = new LinkedList<>();
     }
 
-    public void contarVoto(Candidato candidato){
+    public void sumarVoto(Candidato candidato){
 
         listaDeVotos.add(candidato);
     }
 
-    public LinkedList<Candidato> obtenerVotos(){
-        return listaDeVotos;
+    public int contarVotos(){
+        return listaDeVotos.size();
 
     }
 
-    public Map<Candidato, Integer> obtenerVotosDeCandidatos(){
-
-        Map<Candidato, Integer> votosDeCantidatos = new HashMap<>();;
-
-        for(Candidato candidatoActual : listaDeVotos){
-            if(!votosDeCantidatos.containsKey(candidatoActual)){
-                votosDeCantidatos.put(candidatoActual, 0);
-            }
-            else {
-                int cantidadDeVotos = votosDeCantidatos.get(candidatoActual);
-                votosDeCantidatos.put(candidatoActual, cantidadDeVotos++);
-            }
-
-        }
-        return votosDeCantidatos;
-    }
-
-    public int obtenerVotosDeCandidato(Candidato unCandidato){
+    public int obtenerTotalDeVotosDeCandidato(Candidato unCandidato){
 
         int votosDeCandidato = 0;
 
@@ -56,7 +39,7 @@ public class Provincia {
         return votosDeCandidato;
     }
 
-    public Map<Partido, Integer> obtenerVotosDePartidos(){
+    public Map<Partido, Integer> obtenerTotalDeVotosDePartidos(){
 
         Map<Partido, Integer> votosDePartidos = new HashMap<>();
 
