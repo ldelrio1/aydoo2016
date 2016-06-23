@@ -5,8 +5,8 @@ package ar.edu.untref.aydoo;
  */
 public class ExcepcionCandidatoInexistente extends RuntimeException {
 
-    private final static String mensajeArchivoInvalido = "El candidato ingresado no existe";
+    private final static String mensajeCandidatoInexistente = "El candidato ingresado no existe";
     public ExcepcionCandidatoInexistente(){
-        super(mensajeArchivoInvalido);
+        super(mensajeCandidatoInexistente);
     }
 }
