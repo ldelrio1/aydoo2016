@@ -6,6 +6,12 @@ package ar.edu.untref.aydoo;
 public class Revista extends Producto {
 
     public Revista(String nombre, double precio) {
-        super(nombre, precio);
+        super.setNombre(nombre);
+        super.setPrecio(precio);
+    }
+
+    @Override
+    public boolean esSuscribible() {
+        return true;
     }
 }

@@ -8,8 +8,8 @@ public class ArticuloDeLibreria extends Producto {
     private double iva;
 
     public ArticuloDeLibreria(String nombre, double precio){
-
-        super(nombre, precio);
+        super.setNombre(nombre);
+        super.setPrecio(precio);
         iva = 0.21;
     }
 

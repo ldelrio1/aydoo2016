@@ -34,5 +34,13 @@ public class PeriodicoTest {
 
         Assert.assertEquals( "Tiempo Argentino", tiempoArgentino.getNombre());
     }
+
+    @Test
+    public void verificaSuscribible(){
+
+        Periodico laNacion = new Periodico("La Nación", 15);
+
+        Assert.assertTrue(laNacion.esSuscribible());
+    }
 }
 

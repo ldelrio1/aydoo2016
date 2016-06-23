@@ -6,6 +6,12 @@ package ar.edu.untref.aydoo;
 public class Periodico extends Producto {
 
     public Periodico(String nombre, double precio) {
-        super(nombre, precio);
+        super.setNombre(nombre);
+        super.setPrecio(precio);
+    }
+
+    @Override
+    public boolean esSuscribible() {
+        return true;
     }
 }

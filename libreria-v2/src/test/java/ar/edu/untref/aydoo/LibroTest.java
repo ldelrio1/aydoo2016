@@ -24,4 +24,11 @@ public class LibroTest {
         Assert.assertEquals( 200, elHobbit.getPrecio(),0.01);
     }
 
+    @Test
+    public void verificaSuscribible(){
+
+        Libro elHobbit = new Libro("El Hobbit", 200);
+
+        Assert.assertFalse(elHobbit.esSuscribible());
+    }
 }

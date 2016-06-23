@@ -32,4 +32,12 @@ public class RevistaTest {
 
         Assert.assertEquals( 40, laNacion.getPrecio(),0.01);
     }
+
+    @Test
+    public void verificaSuscribible(){
+
+        Revista elGrafico = new Revista("El Gráfico", 20);
+
+        Assert.assertTrue(elGrafico.esSuscribible());
+    }
 }

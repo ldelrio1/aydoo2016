@@ -8,11 +8,6 @@ public abstract class Producto {
     private String nombre;
     private double precio;
 
-    public Producto (String nombre, double precio){
-        setNombre(nombre);
-        setPrecio(precio);
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -27,5 +22,9 @@ public abstract class Producto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public boolean esSuscribible() {
+        return false;
     }
 }

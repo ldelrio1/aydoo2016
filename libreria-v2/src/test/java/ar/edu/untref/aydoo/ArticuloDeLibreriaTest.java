@@ -32,4 +32,12 @@ public class ArticuloDeLibreriaTest {
 
         Assert.assertEquals( 5.5, lapicera.getPrecio(),0.01);
     }
+
+    @Test
+    public void verificaSuscribible(){
+
+        ArticuloDeLibreria lapicera = new ArticuloDeLibreria("lapicera Bic", 5);
+
+        Assert.assertFalse(lapicera.esSuscribible());
+    }
 }
