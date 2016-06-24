@@ -12,21 +12,21 @@ public class ClienteTest {
     public void creaClienteVerificaNombre(){
 
         Cliente suarez = new Cliente("Carlos","Suarez","Av. Cabildo 2135");
-        Assert.assertEquals("Carlos", suarez.obtenerNombreDelCliente());
+        Assert.assertEquals("Carlos", suarez.getNombreDelCliente());
     }
 
     @Test
     public void creaClienteVerificaApellido(){
 
         Cliente suarez = new Cliente("Carlos","Suarez","Av. Cabildo 2135");
-        Assert.assertEquals("Suarez", suarez.obtenerApellidoDelCliente());
+        Assert.assertEquals("Suarez", suarez.getApellidoDelCliente());
     }
 
     @Test
     public void creaClienteVerificaDireccion(){
 
         Cliente suarez = new Cliente("Carlos","Suarez","Av. Cabildo 2135");
-        Assert.assertEquals("Av. Cabildo 2135", suarez.obtenerDireccionDelCliente());
+        Assert.assertEquals("Av. Cabildo 2135", suarez.getDireccionDelCliente());
     }
 
     @Test

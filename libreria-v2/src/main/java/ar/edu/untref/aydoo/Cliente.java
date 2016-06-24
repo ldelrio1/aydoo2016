@@ -21,15 +21,15 @@ public class Cliente {
         productosComprados = new HashMap<>();
     }
 
-    public String obtenerNombreDelCliente(){
+    public String getNombreDelCliente(){
         return nombreCliente;
     }
 
-    public String obtenerApellidoDelCliente(){
+    public String getApellidoDelCliente(){
         return apellidoCliente;
     }
 
-    public String obtenerDireccionDelCliente(){
+    public String getDireccionDelCliente(){
         return direccionCliente;
     }
 
