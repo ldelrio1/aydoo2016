@@ -28,7 +28,7 @@ public class Compra {
         mesCompra = mes;
     }
 
-    public List<Producto> getProductos() {
+    public LinkedList<Producto> getProductos() {
         return listaDeCompra;
     }
 }
