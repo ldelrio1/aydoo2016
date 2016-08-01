@@ -1,0 +1,25 @@
+Prestar especial atención a la consigna. Antes de hacer esta tarea debes tener completa la configuración de Travis.
+
+Agrega a la aplicación de factores primos la opción "format" la cual funciona de la siguiente forma:
+
+# Ejemplo de formato pretty
+java -jar factores-primos.jar 360 --format=pretty
+Factores primos 360: 2 2 2 3 3 5
+
+# Ejemplo de formato quiet
+java -jar factores-primos.jar 360 --format=quiet
+5
+3
+3
+2
+2
+2
+
+# Ejemplo de formato NO valido
+java -jar factores-primos.jar 360 --format=yerba
+Formato no aceptado. Las opciones posibles son: pretty o quiet.
+Notar que el orden en que se imprimen los factores es distinto en cada caso.
+
+En caso que no se especifique formato, se debe asumir formato pretty. La especificación de formato no es sensitiva a mayúsculas, o sea, se debe aceptar: pretty y PRETTY, pREtty y diversas varias de mayúsculas y minúsculas. Lo mismo para el caso de quiet.
+
+Para hacer esta tarea toma como punto de partida el código de tu carpeta factores-primos, copialo en una nueva carpeta llamada factores-primos-2.

@@ -1,0 +1,8 @@
+Se pide modelar las elecciones primarias presidenciales concentrándose en los siguientes escenarios:
+
+Emisión de voto
+Cálculo del candidato con más votos obtenidos a nivel nacional
+Cálculo del partido con más votos en una provincia dada
+Utilice el proyecto base y cree una carpeta llamada ejercicio_votación.
+
+Cree una clase IntegracionTest y ponga (al menos) un tests por cada uno de los 3 escenarios previamente mencionados. Adicionalmente realice un diagrama de clases general que muestre su modelo y realice también un diagrama de secuencia por cada uno de los 3 escenarios.

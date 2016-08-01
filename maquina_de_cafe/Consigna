@@ -1,0 +1,91 @@
+Programar (con sus correspondientes tests) la máquina de café (especificación adjunta).
+
+Para hacerlo usar como punto de partida el proyecto base compartido anteriormente. Ubicar la solución en una carpeta llamada "maquina_de_cafe" en tu repositorio personal.
+
+Hacer commit+push luego de cada nueva prueba pasando.
+
+Al finalmente generar el tag "maquina_de_cafe_v1" y entregar en el campus el link a dicho tag.
+
+Máquina expendedora de bebidas
+Colaboradores 
+Hacedor de Café con Leche
+Hacedor de Té con Leche
+Azucarero
+ Mensajes:
+ hacerCafeConLecheConNDeAzucar: n
+1.  Decirle al hacedorDeCafeConLeche prepararEnEsteVaso: (y darle un vaso) 
+2.  Esperar a que el hacedorDeCaféConLeche termine y devuelva el vaso 
+3.  Decirle al azucarero ponerN:enEsteVaso:  (y darle el vaso) 
+4.  Esperar a que el azucarero termine y devuelva el vaso 
+5.  Devolverle el vaso a quien pidió hacer el café con leche 
+ hacerTeConLecheConNDeAzucar: n
+1.  Decirle al hacedorDeTéConLeche prepararEnEsteVaso (y darle un vaso) 
+2.  Esperar a que el hacedorDeTéConLeche termine y devuelva el vaso 
+3.  Decirle al azucarero ponerN:enEsteVaso: (y darle el vaso) 
+4.  Esperar a que el azucarero termine y devuelva el vaso 
+5.  Devolverle el vaso a quien pidió hacer el té con leche 
+
+ Hacedor de té con leche
+ Colaboradores
+Hacedor de Té
+Lechero 
+ Métodos
+ prepararEnEsteVaso:
+1.  Decirle al hacedorDeTé prepararEnEsteVaso (y darle el vaso) 
+2.  Esperar a que el hacedorDeTé termine y devuelva el vaso 
+3.  Decirle al lechero prepararEnEsteVaso (y darle el vaso) 
+4.  Esperar a que el lechero termine y devuelva el vaso 
+5.  Devolverle el vaso a quien me pidió preparar uno 
+
+Hacedor de café con leche
+ Colaboradores
+Cafetero
+Lechero
+Métodos
+ prepararEnEsteVaso:
+1.  Decirle al cafetero prepararEnEsteVaso (y darle el vaso) 
+2.  Esperar a que el cafetero termine y devuelva el vaso 
+3.  Decirle al lechero prepararEnEsteVaso (y darle el vaso) 
+4.  Esperar a que el lechero termine y devuelva el vaso 
+5.  Devolverle el vaso a quien me pidió preparar uno 
+  
+
+Hacedor de te
+ Colaboradores
+ Métodos
+prepararEnEsteVaso :
+1.  Poner té en el vaso (escribir té en un papel y ponerlo en el vaso) 
+2.  Devolverle el vaso a quien me pidió preparar uno 
+ 
+
+Hacedor de te chino
+ Colaboradores
+ Métodos
+prepararEnEsteVaso:
+1.  Poner té en el vaso (tomar un papel amarrillo y ponerlo en el vaso) 
+2.  Devolverle el vaso a quien me pidió preparar uno 
+
+Lechero
+ Colaboradores
+Métodos
+ prepararEnEsteVaso:
+1.  Poner leche en el vaso (escribir leche en un papel y ponerlo en el vaso) 
+2.  Devolverle el vaso a quien me pidió preparar uno 
+ 
+
+Azucarero
+Colaboradores
+Métodos
+ ponerN:enEsteVaso:
+1.  Poner n cucharadas de azúcar en el vaso (dibujar n cruces en un papel y ponerlo 
+en el vaso) 
+2.  Devolverle el vaso a quien me pidió poner las cucharadas 
+ 
+
+Cafetero
+ Colaboradores
+Métodos
+ prepararEnEsteVaso:
+1.  Poner café en el vaso (escribir café en un papel y ponerlo en el vaso) 
+2.  Devolverle el vaso a quien me pidió preparar uno 
+

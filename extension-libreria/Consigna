@@ -1,0 +1,17 @@
+Tomar el código rebido por mail y ponerlo en una carpeta "extension-libreria" (así tal cual, sin acentos)
+Agregar un pom de ser necesario
+Correr los test y verificar que pasan
+Hacer commit + push
+Crear un tag extension-libreria-inicio
+Analizar la consigna
+Analizar y documentar las modificaciones necesario. Poner el analisis en un documento llamado analisis.md dentro de la correspondiente carpeta
+Implementar las modificaciones de la forma que trabajamos habitualmente.
+Al finalizar generar un tag extension-libreria-inicio y subi al campus el link al tag
+ 
+
+Extensión: dada la situación particular situación que atraviesa el país la librería ha decido ofrecer libro en alquiler. Los libro pueden alquilarse por un período de días, mensualmente o cuatrimestralmente. 
+
+alquiler diario: permite un período máximo de 25 días corridos y un mínimo de 3 días. Tiene un precio fijo por día de $10.
+alquiler mensual: tiene un mínimo de 1 mes y un máximo de 3 meses. El precio también es fijo pero de $200.
+alquiler cuatrimestral: puede ser por 1 o 2 cuatrimestres. El precio se calcula a partir de la suma del precio mensual menos un descuento de 10% por cuatrimestre.
+Debe modificar el diseño para soportar alquileres y que los mismos sean considerados en el calculo del pago mensual del cliente.
