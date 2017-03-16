@@ -1,4 +1,6 @@
-Escribe una aplicación de consola (línea de comando) que reciba como parámetro un número y genere por pantalla la secuencia de números que conforman su descomposición en factores primos. A continuación se ofrecen algunos ejemplos concretos del comportamiento esperado:
+Escribe una aplicación de consola (línea de comando) que reciba como parámetro un número 
+y genere por pantalla la secuencia de números que conforman su descomposición en factores primos. 
+A continuación se ofrecen algunos ejemplos concretos del comportamiento esperado:
 
 # Ejemplo 1
 java -jar factores-primos.jar 360
