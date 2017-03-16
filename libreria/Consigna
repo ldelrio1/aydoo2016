@@ -1,8 +1,22 @@
-Una librería vende productos que se dividen en las siguientes categorías: libros, artículos de librería, revistas y periódicos. Las revistas y periódicos tienen un periodicidad que mediremos en cantidad de veces al mes que se publican. Todos los productos tienen un precio asociado. Los artículos de librería además del precio de venta, llevan IVA en la venta. Además los clientes de la librería tiene cliente, de los cuales almacena los datos esenciales incluyendo la dirección, y que productos han comprado en un determinado mes y que suscripciones (a revistas o periódicos) han adquirido. Las suscripciones implican la compra de todos todas las ediciones del producto en cuestión, o sea si me suscribo a un diario que se edita todos los días, entonces estoy comprando 7 ejemplares por semana.
+Una librería vende productos que se dividen en las siguientes categorías: 
+libros, artículos de librería, revistas y periódicos. 
+Las revistas y periódicos tienen un periodicidad que mediremos en cantidad de veces al mes que se publican. 
+Todos los productos tienen un precio asociado. 
+Los artículos de librería además del precio de venta, llevan IVA en la venta. 
+Además los clientes de la librería tiene cliente, 
+de los cuales almacena los datos esenciales incluyendo la dirección, 
+y que productos han comprado en un determinado mes 
+y que suscripciones (a revistas o periódicos) han adquirido. 
+Las suscripciones implican la compra de todos todas las ediciones del producto en cuestión, 
+o sea si me suscribo a un diario que se edita todos los días, entonces estoy comprando 7 ejemplares por semana.
 
-La librería necesita saber para un determinado mes cuanto debe cobrarle a cada cliente. Aquellos clientes que realizan una suscripción anual existe un 20% de descuento sobre el precio del producto (revista o periódico) al cual se suscriben (este descuento es sobre el precio del producto).
+La librería necesita saber para un determinado mes cuanto debe cobrarle a cada cliente. 
+Aquellos clientes que realizan una suscripción anual 
+existe un 20% de descuento sobre el precio del producto (revista o periódico) 
+al cual se suscriben (este descuento es sobre el precio del producto).
 
-Diseñar un modelo de objetos que soporte este problema y codificar todo lo necesario para el método calcularMontoACobrar(mes, cliente) teniendo presente los siguientes ejemplos.
+Diseñar un modelo de objetos que soporte este problema
+y codificar todo lo necesario para el método calcularMontoACobrar(mes, cliente) teniendo presente los siguientes ejemplos.
 
 Dados los datos:
 
@@ -18,7 +32,6 @@ Diario Página12,  $12 cada ejemplar, frecuencia diaria
 
 Diario Clarín $13 cada ejemplar, frecuencia diaria
 
- 
 
 Caso 1, en agosto Juan compra:
 
